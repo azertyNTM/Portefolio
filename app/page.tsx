@@ -1,5 +1,4 @@
 import { AgentPipeline } from "./components/AgentPipeline";
-import { KineticWord } from "./components/KineticWord";
 import { LeadStory } from "./components/LeadStory";
 
 const Arrow = () => <span aria-hidden="true" className="arrow">↗</span>;
@@ -84,11 +83,13 @@ export default function Home() {
             <div><span className="mini-label">LE PROBLÈME</span><p>Une demande arrive, mais la qualification, la première réponse et le suivi reposent trop souvent sur des actions manuelles.</p></div>
             <div><span className="mini-label">LA RÉPONSE</span><p>Le système transforme l&apos;entrée en lead qualifié, priorisé, informé et suivi — sans perdre le contexte commercial.</p></div>
           </div>
-          <div className="video-frame" role="img" aria-label="Emplacement de la démonstration vidéo Speed-to-Lead">
+          <div className="video-frame" id="video-speed-to-lead" aria-label="Emplacement de la démonstration vidéo Speed-to-Lead">
             <div className="video-grid" />
+            <div className="video-orbit video-orbit-one" /><div className="video-orbit video-orbit-two" />
             <span className="video-eyebrow">DÉMONSTRATION / 2—4 MIN</span>
             <button type="button" className="play-button" aria-label="Vidéo de démonstration à ajouter"><span>▶</span></button>
-            <div className="video-caption"><strong>De la demande au rendez-vous.</strong><span>Emplacement prêt pour la vidéo de démonstration</span></div>
+            <div className="video-caption"><strong>De la demande au rendez-vous.</strong><span>Une vraie vidéo de démonstration prendra place ici.</span></div>
+            <span className="video-ready">APERÇU PRÊT</span>
           </div>
           <p className="disclaimer">Les métriques visibles dans la démonstration sont des mesures locales de démo. Elles ne représentent pas des résultats obtenus chez un client.</p>
         </div>
@@ -128,7 +129,7 @@ export default function Home() {
 
       <section className="about-contact" id="contact">
         <div className="about"><span className="mini-label">À PROPOS</span><p>Je construis des automatisations IA et des outils sur mesure pour les entreprises qui veulent rendre leurs opérations plus nettes, plus rapides et plus fiables.</p><p>Curieux par nature, pragmatique par méthode : j&apos;aime les systèmes complets, de l&apos;idée jusqu&apos;à l&apos;usage réel.</p></div>
-        <div className="contact-card"><span className="mini-label">PREMIER ÉCHANGE</span><h2>Un processus encore géré <KineticWord text="manuellement ?" /></h2><p>Parlons de ce qui pourrait être simplifié, accéléré ou mieux suivi.</p><a className="button button-primary" href="mailto:bonjour@votredomaine.fr">Écrire un message <Arrow /></a><small>Remplacez <b>bonjour@votredomaine.fr</b> par votre adresse professionnelle.</small></div>
+        <div className="contact-card"><span className="mini-label">PREMIER ÉCHANGE</span><h2>Un processus encore géré <i>manuellement ?</i></h2><p>Parlons de ce qui pourrait être simplifié, accéléré ou mieux suivi.</p><a className="button button-primary" href="mailto:bonjour@votredomaine.fr">Écrire un message <Arrow /></a><small>Remplacez <b>bonjour@votredomaine.fr</b> par votre adresse professionnelle.</small></div>
       </section>
 
       <footer><a className="wordmark" href="#top"><span className="wordmark-mark" />Alexis <em>Automations</em></a><p>© 2026 — Systèmes IA utiles, conçus avec intention.</p><a href="#top">Retour en haut ↑</a></footer>

@@ -21,13 +21,13 @@ export const metadata: Metadata = {
     description: "Des automatisations IA conçues pour rendre les opérations plus nettes, rapides et fiables.",
     type: "website",
     locale: "fr_FR",
-    images: [{ url: "/og-premium.png", width: 1731, height: 909, alt: "Alexis Automations — Systèmes IA utiles" }],
+    images: [{ url: "/og-refined.png", width: 1734, height: 907, alt: "Alexis Automations — Systèmes IA utiles" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Alexis Automations — Systèmes IA utiles",
     description: "Des automatisations IA conçues pour rendre les opérations plus nettes, rapides et fiables.",
-    images: ["/og-premium.png"],
+    images: ["/og-refined.png"],
   },
   icons: {
     icon: "/favicon.svg",

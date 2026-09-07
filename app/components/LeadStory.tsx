@@ -42,5 +42,6 @@ function StoryScreen({ active }: { active: number }) {
       <div className="visual visual-actions"><span className="visual-caption">ACTIONS LANCÉES</span>{["CRM mis à jour", "Email personnalisé", "Alerte commerciale", "Rendez-vous proposé"].map((item, i) => <p key={item} style={{ "--action": `${i * .12}s` } as CSSProperties}><b>{i === 3 ? "↗" : "✓"}</b>{item}<span>FAIT</span></p>)}</div>
     </div>
     <div className="screen-result"><i /> {active === 3 ? "Le commercial reçoit un lead exploitable." : "Les décisions restent visibles et justifiables."}</div>
+    {active === 3 && <a className="story-demo-link" href="#video-speed-to-lead">Voir la démonstration <span aria-hidden="true">↗</span></a>}
   </div>;
 }
