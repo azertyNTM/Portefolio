@@ -1,3 +1,6 @@
+import { AgentPipeline } from "./components/AgentPipeline";
+import { LeadStory } from "./components/LeadStory";
+
 const Arrow = () => <span aria-hidden="true" className="arrow">↗</span>;
 
 const projects = [
@@ -52,33 +55,7 @@ export default function Home() {
           <p className="hero-note">Pour les équipes qui veulent avancer sans ajouter de complexité.</p>
         </div>
 
-        <div className="hero-system" aria-label="Illustration d'un processus de qualification de leads">
-          <div className="system-grid" />
-          <div className="system-glow" />
-          <div className="system-label"><span className="system-live" /> SYSTÈME EN ACTION <b>LIVE</b></div>
-          <div className="system-orbit orbit-one" />
-          <div className="system-orbit orbit-two" />
-          <div className="system-card lead-card">
-            <div className="card-kicker">NOUVEAU LEAD</div>
-            <strong>Demande entrante</strong>
-            <span>Formulaire / API</span>
-          </div>
-          <div className="connector connector-one" />
-          <div className="system-card score-card">
-            <div className="score-top"><span>QUALIFICATION</span><b>87</b></div>
-            <div className="score-line"><i /></div>
-            <strong>Priorité haute</strong>
-          </div>
-          <div className="connector connector-two" />
-          <div className="system-card action-card">
-            <span className="status-dot" />
-            <div><div className="card-kicker">ACTION SUIVANTE</div><strong>Réponse personnalisée envoyée</strong></div>
-          </div>
-          <div className="system-tag tag-one">Scoring</div>
-          <div className="system-tag tag-two">CRM</div>
-          <div className="system-tag tag-three">Relance</div>
-          <div className="system-footer"><span><i /> Traitement en cours</span><b>12:48:03</b></div>
-        </div>
+        <AgentPipeline />
       </section>
 
       <section className="preview-proof" aria-label="Présentation du portfolio">
@@ -116,15 +93,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="workflow-band" id="lead-workflow">
-        <div className="workflow-title"><span className="mini-label">DANS LE SYSTÈME</span><h3>Un lead devient une action commerciale claire.</h3></div>
-        <ol className="workflow-list">
-          <li><b>01</b><span>Capture</span><p>Formulaire ou API entrante</p></li>
-          <li><b>02</b><span>Qualification</span><p>Besoin, budget, délai, contexte</p></li>
-          <li><b>03</b><span>Priorisation</span><p>Score 0—100 et niveau d&apos;urgence</p></li>
-          <li><b>04</b><span>Suivi</span><p>Réponse, CRM, alerte, relances, booking</p></li>
-        </ol>
-      </section>
+      <LeadStory />
 
       <section className="project-grid" aria-label="Autres réalisations">
         {projects.map((project) => (
