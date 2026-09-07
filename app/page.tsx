@@ -1,4 +1,5 @@
 import { AgentPipeline } from "./components/AgentPipeline";
+import { KineticWord } from "./components/KineticWord";
 import { LeadStory } from "./components/LeadStory";
 
 const Arrow = () => <span aria-hidden="true" className="arrow">↗</span>;
@@ -127,7 +128,7 @@ export default function Home() {
 
       <section className="about-contact" id="contact">
         <div className="about"><span className="mini-label">À PROPOS</span><p>Je construis des automatisations IA et des outils sur mesure pour les entreprises qui veulent rendre leurs opérations plus nettes, plus rapides et plus fiables.</p><p>Curieux par nature, pragmatique par méthode : j&apos;aime les systèmes complets, de l&apos;idée jusqu&apos;à l&apos;usage réel.</p></div>
-        <div className="contact-card"><span className="mini-label">PREMIER ÉCHANGE</span><h2>Un processus encore géré <i>manuellement ?</i></h2><p>Parlons de ce qui pourrait être simplifié, accéléré ou mieux suivi.</p><a className="button button-primary" href="mailto:bonjour@votredomaine.fr">Écrire un message <Arrow /></a><small>Remplacez <b>bonjour@votredomaine.fr</b> par votre adresse professionnelle.</small></div>
+        <div className="contact-card"><span className="mini-label">PREMIER ÉCHANGE</span><h2>Un processus encore géré <KineticWord text="manuellement ?" /></h2><p>Parlons de ce qui pourrait être simplifié, accéléré ou mieux suivi.</p><a className="button button-primary" href="mailto:bonjour@votredomaine.fr">Écrire un message <Arrow /></a><small>Remplacez <b>bonjour@votredomaine.fr</b> par votre adresse professionnelle.</small></div>
       </section>
 
       <footer><a className="wordmark" href="#top"><span className="wordmark-mark" />Alexis <em>Automations</em></a><p>© 2026 — Systèmes IA utiles, conçus avec intention.</p><a href="#top">Retour en haut ↑</a></footer>
