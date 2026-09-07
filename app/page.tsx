@@ -1,138 +1,56 @@
-import { AgentPipeline } from "./components/AgentPipeline";
-import { LeadStory } from "./components/LeadStory";
+import { CaseNarrative } from "./components/CaseNarrative";
+import { ProjectIndex } from "./components/ProjectIndex";
 
-const Arrow = () => <span aria-hidden="true" className="arrow">↗</span>;
-
-const projects = [
-  {
-    index: "02",
-    title: "Recherche commerciale\n& prospection B2B",
-    summary: "Un CRM de recherche qui transforme une entreprise en contexte commercial exploitable.",
-    outcome: "Une préparation de prospection plus personnalisée, ancrée dans des signaux et des sources vérifiables.",
-    tags: ["Recherche adaptative", "Signaux commerciaux", "Sources & preuves"],
-  },
-  {
-    index: "03",
-    title: "IA vocale\nen temps réel",
-    summary: "Un agent vocal conçu pour tenir une conversation téléphonique naturelle, en streaming et avec très faible latence.",
-    outcome: "Système en développement — pour des interactions téléphoniques fluides et réellement utiles.",
-    tags: ["Streaming", "Barge-in", "Téléphonie"],
-  },
-];
+const Arrow = () => <span aria-hidden="true">↗</span>;
 
 export default function Home() {
   return (
-    <main>
+    <main id="top">
       <header className="site-header">
-        <a className="wordmark" href="#top" aria-label="Accueil">
-          <span className="wordmark-mark" />
-          Alexis <em>Automations</em>
-        </a>
-        <nav aria-label="Navigation principale">
-          <a href="#realisations">Réalisations</a>
-          <a href="#approche">Approche</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <a className="header-cta" href="#contact">Parlons-en <Arrow /></a>
+        <a className="wordmark" href="#top" aria-label="Retour au début">Alexis <span>Automations</span></a>
+        <nav aria-label="Navigation principale"><a href="#projets">Projets</a><a href="#methode">Méthode</a><a href="#contact">Contact</a></nav>
+        <a className="header-link" href="mailto:bonjour@votredomaine.fr">Écrire <Arrow /></a>
       </header>
 
-      <section className="hero" id="top">
-        <div className="hero-copy">
-          <p className="eyebrow"><span /> Automatisation IA sur mesure</p>
-          <h1>Moins de tâches.<br />Plus d&apos;élan <i>métier.</i></h1>
-          <p className="hero-intro">
-            Je conçois des systèmes qui transforment les tâches commerciales et opérationnelles répétitives en processus fiables, utiles et pilotables.
-          </p>
-          <div className="hero-actions">
-            <a className="button button-primary" href="#realisations">Voir mes réalisations <Arrow /></a>
-            <a className="text-link" href="#contact">Me contacter <span aria-hidden="true">↓</span></a>
-          </div>
-          <div className="hero-metrics" aria-label="Principes de conception">
-            <div><strong>01</strong><span>Flux simplifiés</span></div>
-            <div><strong>24/7</strong><span>Systèmes disponibles</span></div>
-            <div><strong>∞</strong><span>Itérations utiles</span></div>
-          </div>
-          <p className="hero-note">Pour les équipes qui veulent avancer sans ajouter de complexité.</p>
-        </div>
-
-        <AgentPipeline />
+      <section className="hero" aria-labelledby="hero-title">
+        <div className="hero-meta"><p>Portfolio / 2026</p><p>Automatisations commerciales<br />Recherche B2B · voix</p></div>
+        <div className="hero-main"><h1 id="hero-title">Des systèmes pour le travail qui <em>n’attend pas.</em></h1><p className="hero-intro">Je conçois des automatisations qui traitent une demande, mettent une entreprise en contexte et tiennent une conversation. Trois projets, documentés sans décor de SaaS.</p></div>
+        <a className="scroll-cue" href="#projets">Découvrir les projets <span aria-hidden="true">↓</span></a>
       </section>
 
-      <section className="preview-proof" aria-label="Présentation du portfolio">
-        <p>DES SYSTÈMES PENSÉS POUR LE TERRAIN</p>
-        <span>Prospection <b>·</b> Qualification <b>·</b> Opérations <b>·</b> Voix</span>
+      <section className="hero-reel" aria-label="Projet mis en avant : Speed-to-Lead">
+        <div className="reel-topline"><span>01 / EN PREMIER</span><span>Démo vidéo à venir · 2–4 min</span></div>
+        <div className="reel-typography"><p>UNE DEMANDE<br />N’EST PAS<br /><i>UN TICKET.</i></p><span>Speed-to-Lead<br />Automation</span></div>
+        <div className="reel-object"><div className="reel-strip reel-strip-a">demande entrante</div><div className="reel-strip reel-strip-b">contexte commercial</div><div className="reel-strip reel-strip-c">réponse préparée</div><div className="reel-play" aria-hidden="true">Lecture<br />bientôt</div></div>
+        <p className="reel-caption">Emplacement réservé à la vraie démonstration produit. Cette composition n’est pas une capture d’écran.</p>
       </section>
 
-      <section className="section-intro" id="realisations">
-        <p className="eyebrow"><span /> Réalisations sélectionnées</p>
-        <div>
-          <h2>Des projets qui partent d&apos;un <i>problème concret.</i></h2>
-          <p>Chaque système est conçu autour d&apos;un flux métier, de ses exceptions et de la décision qu&apos;il doit faciliter.</p>
-        </div>
+      <section className="project-intro" id="projets"><p className="section-kicker">Trois systèmes / trois matières</p><h2>Les projets ne se ressemblent pas, parce que les problèmes non plus.</h2></section>
+      <ProjectIndex />
+
+      <section className="case speed-case" id="speed-to-lead" aria-labelledby="speed-title">
+        <div className="case-label"><span>01</span><span>Speed-to-Lead<br />Automation</span></div>
+        <div className="case-heading"><h2 id="speed-title">Rendre la première réponse <em>exploitable.</em></h2><p>Une demande arrive. Le système récupère son contexte, prépare la qualification et laisse une trace nette pour la personne qui reprend la main.</p></div>
+        <div className="case-facts"><div><span>Point de départ</span><p>Les réponses initiales et les relances dépendent d’actions manuelles, souvent au moment où l’attention est la plus fragile.</p></div><div><span>Ce qui est construit</span><p>Un passage fiable entre la demande, les informations utiles et une suite commerciale lisible — sans prétendre remplacer la décision humaine.</p></div></div>
       </section>
 
-      <section className="featured-case" aria-labelledby="lead-title">
-        <div className="case-heading">
-          <span className="case-number">01 / RÉALISATION</span>
-          <h2 id="lead-title">Speed-to-Lead<br /><i>Automation</i></h2>
-          <p>Un système automatisé de traitement, qualification et suivi des leads entrants.</p>
-          <a className="text-link" href="#lead-workflow">Voir le fonctionnement <Arrow /></a>
-        </div>
-        <div className="case-story">
-          <div className="case-columns">
-            <div><span className="mini-label">LE PROBLÈME</span><p>Une demande arrive, mais la qualification, la première réponse et le suivi reposent trop souvent sur des actions manuelles.</p></div>
-            <div><span className="mini-label">LA RÉPONSE</span><p>Le système transforme l&apos;entrée en lead qualifié, priorisé, informé et suivi — sans perdre le contexte commercial.</p></div>
-          </div>
-          <div className="video-frame" id="video-speed-to-lead" aria-label="Emplacement de la démonstration vidéo Speed-to-Lead">
-            <div className="video-grid" />
-            <div className="video-orbit video-orbit-one" /><div className="video-orbit video-orbit-two" />
-            <span className="video-eyebrow">DÉMONSTRATION / 2—4 MIN</span>
-            <button type="button" className="play-button" aria-label="Vidéo de démonstration à ajouter"><span>▶</span></button>
-            <div className="video-caption"><strong>De la demande au rendez-vous.</strong><span>Une vraie vidéo de démonstration prendra place ici.</span></div>
-            <span className="video-ready">APERÇU PRÊT</span>
-          </div>
-          <p className="disclaimer">Les métriques visibles dans la démonstration sont des mesures locales de démo. Elles ne représentent pas des résultats obtenus chez un client.</p>
-        </div>
+      <CaseNarrative />
+
+      <section className="case research-case" id="recherche" aria-labelledby="research-title">
+        <div className="case-label"><span>02</span><span>Recherche commerciale<br />& prospection B2B</span></div>
+        <div className="research-layout"><div className="research-copy"><h2 id="research-title">Avant d’écrire, il faut avoir <em>quelque chose à dire.</em></h2><p>Un espace de recherche transforme une entreprise en contexte de prospection : activité, dirigeants, actualités, signaux, angles possibles et sources qui permettent de vérifier.</p><p className="note">Le but n’est pas de produire une liste. C’est de préparer une conversation qui connaît déjà son sujet.</p></div><figure className="research-dossier"><div className="dossier-top"><span>Dossier / aperçu de structure</span><span>02</span></div><div className="dossier-title">Entreprise,<br /><i>pas juste</i><br />un nom.</div><div className="dossier-lines"><p><b>Activité</b><span>Ce que l’entreprise vend et à qui.</span></p><p><b>Personnes</b><span>Décideurs, responsabilités, prises de parole.</span></p><p><b>Signaux</b><span>Recrutements, mouvement, nouvelles, priorités.</span></p><p><b>Sources</b><span>Les liens qui permettent de remonter à l’origine.</span></p></div><figcaption>Maquette de contenu à remplacer par une capture du produit.</figcaption></figure></div>
       </section>
 
-      <LeadStory />
-
-      <section className="project-grid" aria-label="Autres réalisations">
-        {projects.map((project) => (
-          <article className="project-card" key={project.index}>
-            <div className="project-top"><span>{project.index} / RÉALISATION</span><span className="project-icon">↗</span></div>
-            <div className="project-art" aria-hidden="true"><span /><i /><b /></div>
-            <h3>{project.title.split("\n").map((line) => <span key={line}>{line}<br /></span>)}</h3>
-            <p className="project-summary">{project.summary}</p>
-            <p className="project-outcome">{project.outcome}</p>
-            <ul>{project.tags.map((tag) => <li key={tag}>{tag}</li>)}</ul>
-            <div className="project-demo">Vidéo de démonstration <span>à ajouter</span></div>
-          </article>
-        ))}
+      <section className="case voice-case" id="voix" aria-labelledby="voice-title">
+        <div className="case-label"><span>03</span><span>Agent vocal<br />temps réel</span></div>
+        <div className="voice-layout"><div className="voice-art" aria-label="Aperçu d’un extrait audio à venir"><div className="waveform" aria-hidden="true">{Array.from({ length: 42 }, (_, index) => <i key={index} style={{ "--bar": `${(index * 17) % 64 + 16}%` } as React.CSSProperties} />)}</div><p>Extrait audio / à intégrer</p></div><div className="voice-copy"><h2 id="voice-title">Une voix qui écoute aussi quand on <em>l’interrompt.</em></h2><p>Un agent vocal en streaming pour la téléphonie : faible latence, conversation naturelle et barge-in pour ne pas parler par-dessus l’interlocuteur.</p><dl><div><dt>Interaction</dt><dd>Conversation téléphonique en temps réel</dd></div><div><dt>Point d’attention</dt><dd>Répondre vite sans perdre le fil</dd></div><div><dt>À venir</dt><dd>Démo audio ou vidéo issue du système réel</dd></div></dl></div></div>
       </section>
 
-      <section className="coming-soon">
-        <span className="mini-label">EN CONSTRUCTION</span>
-        <h2>Automatisation <i>opérationnelle</i></h2>
-        <p>Planning, réservations, gestion des conflits, affichage et supports : un futur système pour fluidifier le quotidien des équipes.</p>
-        <span className="coming-mark">COMING SOON</span>
-      </section>
+      <section className="method" id="methode"><div className="method-title"><p className="section-kicker">Le travail derrière les écrans</p><h2>Ce qui rend un système <em>tenable.</em></h2></div><ol><li><span>01</span><p><b>Observer le flux.</b> Où une information disparaît, où une personne doit décider, où l’exception devient la règle.</p></li><li><span>02</span><p><b>Fabriquer le bon passage.</b> Des entrées compréhensibles, des sorties actionnables et une place nette pour le contrôle humain.</p></li><li><span>03</span><p><b>Éprouver dans le réel.</b> Les cas limites, les retours terrain et les détails qui font qu’on utilise vraiment l’outil.</p></li></ol></section>
 
-      <section className="approach" id="approche">
-        <div className="approach-intro"><p className="eyebrow"><span /> Comment je travaille</p><h2>Simple dans la méthode.<br /><i>Exigeant dans l&apos;exécution.</i></h2></div>
-        <ol>
-          <li><b>01</b><div><h3>Comprendre le flux réel</h3><p>Les tâches, les décisions, les frictions — et les exceptions qui comptent.</p></div></li>
-          <li><b>02</b><div><h3>Concevoir le bon système</h3><p>Une automatisation lisible qui s&apos;intègre aux outils déjà en place.</p></div></li>
-          <li><b>03</b><div><h3>Tester, déployer, améliorer</h3><p>Le système est vérifié en conditions utiles, puis ajusté au terrain.</p></div></li>
-        </ol>
-      </section>
+      <section className="contact" id="contact"><p className="section-kicker">Alexis, une personne — pas une agence</p><h2>Vous avez un flux qui mérite d’être <em>regardé de près ?</em></h2><p>Décrivez-moi simplement la tâche, les outils déjà en place et ce qui bloque aujourd’hui.</p><a href="mailto:bonjour@votredomaine.fr">bonjour@votredomaine.fr <Arrow /></a><small>Adresse à remplacer par votre adresse professionnelle.</small></section>
 
-      <section className="about-contact" id="contact">
-        <div className="about"><span className="mini-label">À PROPOS</span><p>Je construis des automatisations IA et des outils sur mesure pour les entreprises qui veulent rendre leurs opérations plus nettes, plus rapides et plus fiables.</p><p>Curieux par nature, pragmatique par méthode : j&apos;aime les systèmes complets, de l&apos;idée jusqu&apos;à l&apos;usage réel.</p></div>
-        <div className="contact-card"><span className="mini-label">PREMIER ÉCHANGE</span><h2>Un processus encore géré <i>manuellement ?</i></h2><p>Parlons de ce qui pourrait être simplifié, accéléré ou mieux suivi.</p><a className="button button-primary" href="mailto:bonjour@votredomaine.fr">Écrire un message <Arrow /></a><small>Remplacez <b>bonjour@votredomaine.fr</b> par votre adresse professionnelle.</small></div>
-      </section>
-
-      <footer><a className="wordmark" href="#top"><span className="wordmark-mark" />Alexis <em>Automations</em></a><p>© 2026 — Systèmes IA utiles, conçus avec intention.</p><a href="#top">Retour en haut ↑</a></footer>
+      <footer><a className="wordmark" href="#top">Alexis <span>Automations</span></a><p>© 2026</p><a href="#top">Haut de page ↑</a></footer>
     </main>
   );
 }

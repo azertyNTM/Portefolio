@@ -13,21 +13,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Alexis Automations — Processus utiles, systèmes fiables",
-  description: "Portfolio d'automatisations IA conçues pour accélérer les opérations commerciales et métier.",
+  title: "Alexis Automations — Portfolio de systèmes métier",
+  description: "Automatisations commerciales, recherche B2B et agent vocal : des systèmes conçus pour le travail réel.",
   metadataBase: new URL("https://alexis-automations-portfolio.instalife.chatgpt.site"),
   openGraph: {
-    title: "Alexis Automations — Systèmes IA utiles",
-    description: "Des automatisations IA conçues pour rendre les opérations plus nettes, rapides et fiables.",
+    title: "Alexis Automations — Systèmes pour le travail qui n’attend pas",
+    description: "Automatisations commerciales, recherche B2B et agent vocal : trois systèmes documentés sans décor de SaaS.",
     type: "website",
     locale: "fr_FR",
-    images: [{ url: "/og-refined.png", width: 1734, height: 907, alt: "Alexis Automations — Systèmes IA utiles" }],
+    images: [{ url: "/og-editorial.png", width: 1731, height: 909, alt: "Alexis Automations — Portfolio de systèmes métier" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Alexis Automations — Systèmes IA utiles",
-    description: "Des automatisations IA conçues pour rendre les opérations plus nettes, rapides et fiables.",
-    images: ["/og-refined.png"],
+    title: "Alexis Automations — Systèmes pour le travail qui n’attend pas",
+    description: "Automatisations commerciales, recherche B2B et agent vocal : trois systèmes documentés sans décor de SaaS.",
+    images: ["/og-editorial.png"],
   },
   icons: {
     icon: "/favicon.svg",
