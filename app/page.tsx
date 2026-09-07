@@ -44,11 +44,18 @@ export default function Home() {
             <a className="button button-primary" href="#realisations">Voir mes réalisations <Arrow /></a>
             <a className="text-link" href="#contact">Me contacter <span aria-hidden="true">↓</span></a>
           </div>
+          <div className="hero-metrics" aria-label="Principes de conception">
+            <div><strong>01</strong><span>Flux simplifiés</span></div>
+            <div><strong>24/7</strong><span>Systèmes disponibles</span></div>
+            <div><strong>∞</strong><span>Itérations utiles</span></div>
+          </div>
           <p className="hero-note">Pour les équipes qui veulent avancer sans ajouter de complexité.</p>
         </div>
 
         <div className="hero-system" aria-label="Illustration d'un processus de qualification de leads">
-          <div className="system-label">SYSTÈME EN ACTION <span>●</span></div>
+          <div className="system-grid" />
+          <div className="system-glow" />
+          <div className="system-label"><span className="system-live" /> SYSTÈME EN ACTION <b>LIVE</b></div>
           <div className="system-orbit orbit-one" />
           <div className="system-orbit orbit-two" />
           <div className="system-card lead-card">
@@ -70,6 +77,7 @@ export default function Home() {
           <div className="system-tag tag-one">Scoring</div>
           <div className="system-tag tag-two">CRM</div>
           <div className="system-tag tag-three">Relance</div>
+          <div className="system-footer"><span><i /> Traitement en cours</span><b>12:48:03</b></div>
         </div>
       </section>
 
