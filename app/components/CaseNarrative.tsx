@@ -3,9 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 
 const steps = [
-  { title: "La demande arrive", copy: "Le système part de ce qui existe vraiment : formulaire, message, prise de contact ou signal entrant.", label: "entrée" },
-  { title: "Le contexte suit", copy: "Les éléments utiles sont réunis avant la première réponse : l’origine, les informations disponibles et le point à éclaircir.", label: "contexte" },
-  { title: "Quelqu’un peut agir", copy: "Le résultat n’est pas une animation. C’est une suite de travail claire : répondre, qualifier, relancer ou prendre rendez-vous.", label: "suite" },
+  { title: "Un prospect arrive", copy: "Le système part de ce qui existe vraiment : formulaire, message, prise de contact ou autre signal entrant.", label: "arrivée" },
+  { title: "Le lead est préparé", copy: "Les informations utiles sont réunies, le lead est qualifié ou priorisé, et le point à éclaircir devient visible avant la première réponse.", label: "préparation" },
+  { title: "La personne reprend la main", copy: "La sortie n’est pas une animation : c’est une réponse, une relance ou une prise de rendez-vous à ajuster avec le contexte déjà disponible.", label: "reprise" },
 ];
 
 // Structure adaptée de « Scroll 01 » par Felipe Menezes, 21st.dev :

@@ -3,9 +3,9 @@
 import { useRef, useState } from "react";
 
 const projects = [
-  { id: "speed-to-lead", number: "01", title: "Speed-to-Lead", detail: "Du formulaire à une réponse qui sait déjà de quoi elle parle.", tone: "coral", stamp: "démo vidéo / 2–4 min" },
-  { id: "recherche", number: "02", title: "Recherche B2B", detail: "Une entreprise remise en contexte avant le premier message.", tone: "paper", stamp: "dossier / sources" },
-  { id: "voix", number: "03", title: "Voix en temps réel", detail: "Une conversation téléphonique, sans temps mort ni monologue forcé.", tone: "mint", stamp: "audio / à venir" },
+  { id: "speed-to-lead", number: "01", title: "Speed-to-Lead", detail: "Un prospect arrive ; le contexte et la prochaine action sont préparés.", tone: "coral", stamp: "démo vidéo / 2–4 min" },
+  { id: "recherche", number: "02", title: "Recherche B2B", detail: "Une entreprise devient un dossier de prospection sourcé et exploitable.", tone: "paper", stamp: "dossier / sources" },
+  { id: "voix", number: "03", title: "Voix en temps réel", detail: "Un agent téléphonique qui répond, écoute et laisse parler.", tone: "mint", stamp: "audio / à venir" },
 ];
 
 // Adapté de « Project Showcase » par Jatin Yadav, 21st.dev :
