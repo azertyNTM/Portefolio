@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Mono, Syne } from "next/font/google";
+import { DM_Mono, DM_Sans, Syne } from "next/font/google";
 import "./globals.css";
 
 const display = Syne({
@@ -10,6 +10,11 @@ const display = Syne({
 const mono = DM_Mono({
   variable: "--font-mono",
   weight: ["400", "500"],
+  subsets: ["latin"],
+});
+
+const sans = DM_Sans({
+  variable: "--font-sans",
   subsets: ["latin"],
 });
 
@@ -44,7 +49,7 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body
-        className={`${display.variable} ${mono.variable} antialiased`}
+        className={`${display.variable} ${sans.variable} ${mono.variable} antialiased`}
       >
         {children}
       </body>
