@@ -1,49 +1,43 @@
-import { CaseNarrative } from "./components/CaseNarrative";
-import { ProjectIndex } from "./components/ProjectIndex";
-
 const Arrow = () => <span aria-hidden="true">↗</span>;
+
+const projects = [
+  { number: "01", title: "Speed-to-Lead", description: "À chaque demande entrante, le contexte et la prochaine action sont prêts avant la première réponse.", tags: ["qualification", "CRM", "relance"], href: "#speed-to-lead" },
+  { number: "02", title: "Recherche B2B", description: "Un dossier sourcé pour préparer une prise de contact qui a une vraie raison d’exister.", tags: ["signaux", "sources", "prospection"], href: "#recherche" },
+  { number: "03", title: "Agent vocal", description: "Des conversations téléphoniques naturelles, en temps réel, avec reprise de main humaine.", tags: ["temps réel", "voix", "streaming"], href: "#voix" },
+];
 
 export default function Home() {
   return (
     <main id="top">
       <header className="site-header">
-        <a className="wordmark" href="#top" aria-label="Retour au début">Alexis <span>Automations</span></a>
-        <nav aria-label="Navigation principale"><a href="#projets">Projets</a><a href="#methode">Méthode</a><a href="#contact">Contact</a></nav>
-        <a className="header-link" href="mailto:bonjour@votredomaine.fr">Écrire <Arrow /></a>
+        <a className="wordmark" href="#top" aria-label="Retour à l’accueil">Alexis<span>.</span></a>
+        <nav aria-label="Navigation principale"><a href="#projets">Projets</a><a href="#methode">Méthode</a></nav>
+        <a className="header-cta" href="#contact">Me contacter <Arrow /></a>
       </header>
 
       <section className="hero" aria-labelledby="hero-title">
-        <div className="hero-intro-block"><p className="hero-index">Alexis / systèmes métier / 2026</p><h1 id="hero-title">Une demande ne devrait jamais repartir de zéro.</h1><p>Je conçois des automatisations métier et des systèmes IA qui réduisent les tâches manuelles, accélèrent le traitement des prospects et donnent aux équipes les bonnes informations au bon moment.</p><p className="hero-support">Ici : automatisation commerciale, recherche B2B et conversation téléphonique en temps réel.</p><div className="hero-actions"><a className="action-solid" href="#speed-to-lead">Suivre un scénario <Arrow /></a><a className="action-quiet" href="#projets">Voir les trois systèmes <Arrow /></a></div></div>
-        <article className="hero-case" aria-labelledby="hero-case-title"><div className="hero-case-top"><span>Scénario à suivre</span><span>01</span></div><div className="hero-case-main"><p>Speed-to-Lead</p><h2 id="hero-case-title">Le contexte arrive avant la première réponse.</h2></div><ol className="hero-case-notes"><li>Prospect reçu</li><li>Informations utiles récupérées</li><li>Lead qualifié et priorisé</li><li>Réponse ou action préparée</li></ol><div className="hero-case-footer"><strong>Démo vidéo en préparation</strong><a href="#speed-demo">Voir ce que la démo montrera <Arrow /></a></div></article>
+        <div><p className="eyebrow"><i /> Automatisations & IA métier</p><h1 id="hero-title">Des systèmes utiles.<br /><em>Pas du bruit.</em></h1></div>
+        <div className="hero-aside"><p>J’aide les équipes commerciales à supprimer les tâches répétitives et à décider plus vite, sans perdre le contexte humain.</p><a className="button button-primary" href="#projets">Voir les projets <Arrow /></a></div>
       </section>
 
-      <section className="project-intro" id="projets"><p className="section-kicker">Trois systèmes, trois points de départ</p><h2>Chaque projet change de forme parce qu’il répond à une situation différente.</h2></section>
-      <ProjectIndex />
+      <section className="principle" aria-label="Approche"><p>Le bon système ne cherche pas à impressionner. Il rend le travail plus simple, au bon moment.</p><div className="principle-mark" aria-hidden="true"><span>01</span><b>→</b></div></section>
 
-      <section className="case speed-case" id="speed-to-lead" aria-labelledby="speed-title">
-        <div className="case-label"><span>01</span><span>Speed-to-Lead<br />Automation</span></div>
-        <div className="case-heading"><h2 id="speed-title">Rendre la première réponse exploitable.</h2><p>Un prospect arrive. Au lieu de chercher les informations, de qualifier à la main puis de reconstruire le contexte, la personne commerciale retrouve une base déjà préparée.</p></div>
-        <div className="case-facts"><div><span>Le problème</span><p>Les demandes entrantes, la qualification et le suivi initial reposent souvent sur des actions manuelles, au moment où l’attention est la plus fragile.</p></div><div><span>Le système construit</span><p>Il récupère les éléments utiles, qualifie ou priorise le lead, puis prépare une réponse ou une prochaine action.</p></div><div><span>Ce qui sera observable</span><p>La démo montrera le passage complet : arrivée du prospect, contexte rassemblé, action préparée et reprise de main humaine.</p></div></div>
+      <section className="projects" id="projets" aria-labelledby="projects-title">
+        <div className="section-heading"><p className="eyebrow"><i /> Sélection</p><h2 id="projects-title">Projets récents</h2></div>
+        <div className="project-list">{projects.map((project) => <a className="project-card" href={project.href} key={project.number}><span className="project-number">{project.number}</span><div><h3>{project.title}</h3><p>{project.description}</p></div><ul aria-label={`Thèmes : ${project.tags.join(", ")}`}>{project.tags.map((tag) => <li key={tag}>{tag}</li>)}</ul><span className="project-arrow"><Arrow /></span></a>)}</div>
       </section>
 
-      <CaseNarrative />
-      <section className="speed-demo" id="speed-demo" aria-labelledby="speed-demo-title"><div className="demo-stamp"><span>Point de passage</span><span>01 / démo</span></div><div className="demo-copy"><h3 id="speed-demo-title">Une courte démo doit suffire à vérifier le passage du signal à l’action.</h3><p>La future vidéo montrera une demande entrante, les éléments rassemblés, la priorité décidée et le moment où la personne commerciale reprend la main. Pas de résultat reconstitué : le système tel qu’il fonctionne.</p></div><div className="demo-actions"><p>Format prévu<br /><strong>2–4 min</strong></p><a className="action-solid" href="#contact">Me parler d’un processus <Arrow /></a></div></section>
-
-      <section className="case research-case" id="recherche" aria-labelledby="research-title">
-        <div className="case-label"><span>02</span><span>Recherche commerciale<br />& prospection B2B</span></div>
-        <div className="research-layout"><div className="research-copy"><h2 id="research-title">Avant d’écrire, il faut avoir quelque chose à dire.</h2><p>À partir d’une entreprise, le système construit un dossier exploitable : activité, dirigeants, actualités, signaux commerciaux, besoins potentiels, angles de prospection et sources vérifiables.</p><p className="note">L’objectif n’est pas de générer un message. C’est de donner à la personne qui contacte une entreprise une raison précise de le faire.</p></div><figure className="research-dossier"><div className="dossier-top"><span>Dossier / aperçu de structure</span><span>02</span></div><div className="dossier-title">Une entreprise,<br />pas juste<br />un nom.</div><div className="dossier-lines"><p><b>Activité</b><span>Ce que l’entreprise vend et à qui.</span></p><p><b>Personnes</b><span>Décideurs, responsabilités, prises de parole.</span></p><p><b>Signaux</b><span>Recrutements, mouvement, nouvelles, priorités.</span></p><p><b>Angles</b><span>Les besoins ou sujets à explorer.</span></p><p><b>Sources</b><span>Les liens qui permettent de vérifier.</span></p></div><figcaption>Future capture du dossier réel et de ses sources.</figcaption></figure></div>
+      <section className="featured" id="speed-to-lead" aria-labelledby="featured-title">
+        <div className="featured-label"><span>Focus</span><span>01 / Speed-to-Lead</span></div>
+        <div className="featured-grid"><div><h2 id="featured-title">Le contexte, avant la réponse.</h2><p>Quand un prospect arrive, les éléments utiles sont déjà rassemblés. L’équipe commerciale n’a plus à reconstruire l’histoire avant d’agir.</p></div><ol className="flow" aria-label="Déroulé du système"><li><span>01</span><strong>Signal reçu</strong><p>Une demande déclenche le flux.</p></li><li><span>02</span><strong>Contexte préparé</strong><p>Les données utiles sont réunies.</p></li><li><span>03</span><strong>Action proposée</strong><p>La personne reprend la main.</p></li></ol></div>
       </section>
 
-      <section className="case voice-case" id="voix" aria-labelledby="voice-title">
-        <div className="case-label"><span>03</span><span>Agent vocal<br />temps réel</span></div>
-        <div className="voice-layout"><div className="voice-art" aria-label="Aperçu d’un extrait audio à venir"><div className="waveform" aria-hidden="true">{Array.from({ length: 42 }, (_, index) => <i key={index} style={{ "--bar": `${(index * 17) % 64 + 16}%` } as React.CSSProperties} />)}</div><p>Extrait audio à intégrer</p></div><div className="voice-copy"><h2 id="voice-title">Une voix qui écoute aussi quand on l’interrompt.</h2><p>Un agent qui peut tenir une conversation téléphonique en temps réel, sans donner l’impression de réciter un script. Il répond vite, traite le flux au fil de l’échange et se tait naturellement lorsqu’une personne reprend la parole.</p><dl><div><dt>Ce qu’il fait</dt><dd>Conversation téléphonique, en streaming et avec faible latence</dd></div><div><dt>Point d’attention</dt><dd>Ne pas couper l’interlocuteur ni perdre le fil de l’échange</dd></div><div><dt>À voir bientôt</dt><dd>Extrait audio ou vidéo issu du système réel</dd></div></dl></div></div>
-      </section>
+      <section className="capabilities" aria-label="Autres systèmes"><article id="recherche"><span>02</span><h2>Recherche B2B</h2><p>De l’entreprise au dossier de prospection sourcé : activité, personnes, signaux et angles de contact.</p></article><article id="voix"><span>03</span><h2>Agent vocal</h2><p>Un agent qui répond, écoute et sait se taire quand la conversation le demande.</p></article></section>
 
-      <section className="method" id="methode"><div className="method-title"><p className="section-kicker">Le travail derrière les écrans</p><h2>Un système tient quand quelqu’un peut le comprendre, le contredire et le reprendre.</h2></div><div className="method-copy"><p>Je commence par ce qui circule réellement : l’information qui manque, la décision qui tarde, l’exception que personne n’a documentée.</p><p>Ensuite, je construis un passage lisible — puis je le confronte aux cas qui ne rentrent pas dans la démonstration.</p></div></section>
+      <section className="method" id="methode" aria-labelledby="method-title"><p className="eyebrow"><i /> La méthode</p><div><h2 id="method-title">Comprendre le flux.<br />Construire juste.</h2><p>Je pars du travail réel : une information manquante, une décision qui attend, une tâche répétée. Puis je crée un système lisible, testable et facile à reprendre.</p></div></section>
 
-      <section className="contact" id="contact"><p className="section-kicker">Un interlocuteur unique, du premier échange au système livré</p><h2>Parlons du travail qui revient trop souvent.</h2><p>Je comprends le processus, construis le système, le teste et documente son fonctionnement. Un flux, un outil déjà en place ou une tâche que personne n’a envie de refaire : c’est suffisant pour commencer l’échange.</p><a className="contact-action" href="mailto:bonjour@votredomaine.fr?subject=Processus%20%C3%A0%20automatiser">Me parler d’un processus à automatiser <Arrow /></a><a className="contact-email" href="mailto:bonjour@votredomaine.fr">bonjour@votredomaine.fr</a><small>Adresse à remplacer par votre adresse professionnelle.</small></section>
-
-      <footer><a className="wordmark" href="#top">Alexis <span>Automations</span></a><p>© 2026</p><a href="#top">Haut de page ↑</a></footer>
+      <section className="contact" id="contact" aria-labelledby="contact-title"><p className="eyebrow eyebrow-light"><i /> Un projet en tête ?</p><h2 id="contact-title">Parlons du travail<br />qui revient trop souvent.</h2><a className="button button-light" href="mailto:bonjour@votredomaine.fr?subject=Processus%20%C3%A0%20automatiser">Démarrer la conversation <Arrow /></a><p className="contact-note">bonjour@votredomaine.fr</p></section>
+      <footer><a className="wordmark" href="#top">Alexis<span>.</span></a><p>Automatisations & IA métier</p><a href="#top">Haut de page ↑</a></footer>
     </main>
   );
 }

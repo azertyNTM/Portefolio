@@ -20,13 +20,13 @@ test("server-renders the portfolio and its concrete project context", async () =
 
   const html = await response.text();
   assert.match(html, /Alexis Automations — Portfolio de systèmes métier/);
-  assert.match(html, /Une demande ne devrait jamais repartir de zéro/);
-  assert.match(html, /automatisations métier et des systèmes IA/);
+  assert.match(html, /Des systèmes utiles/);
+  assert.match(html, /Pas du bruit/);
+  assert.match(html, /Automatisations &amp; IA métier/);
   assert.match(html, /Speed-to-Lead/);
-  assert.match(html, /Suivre un scénario/);
-  assert.match(html, /Une courte démo doit suffire/);
+  assert.match(html, /Le contexte, avant la réponse/);
   assert.match(html, /Recherche B2B/);
-  assert.match(html, /Voix en temps réel/);
-  assert.match(html, /Me parler d’un processus à automatiser/);
+  assert.match(html, /Agent vocal/);
+  assert.match(html, /Démarrer la conversation/);
   assert.doesNotMatch(html, /codex-preview|SkeletonPreview|react-loading-skeleton/i);
 });
