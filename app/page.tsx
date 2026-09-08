@@ -17,7 +17,7 @@ export default function Home() {
 
       <section className="hero" aria-labelledby="hero-title">
         <div><h1 id="hero-title">J’automatise vos<br /><em><RotatingHeroWord /></em></h1></div>
-        <div className="hero-aside"><p>Je conçois des systèmes et automatisations IA sur mesure pour réduire les tâches manuelles, accélérer vos processus et faire gagner du temps à vos équipes.</p><div className="hero-actions"><a className="button button-primary" href="#projets">Voir mes réalisations</a><a className="button button-secondary" href="#contact">Discuter de votre projet</a></div></div>
+        <div className="hero-aside"><p>Je conçois des automatisations sur mesure pour réduire les tâches manuelles, accélérer vos processus et faire gagner du temps à vos équipes.</p><div className="hero-actions"><a className="button button-primary" href="#projets">Voir mes réalisations</a><a className="button button-secondary" href="#contact">Discuter de votre projet</a></div></div>
       </section>
 
       <section className="projects" id="projets" aria-labelledby="projects-title">
