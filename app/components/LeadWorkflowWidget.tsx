@@ -50,12 +50,6 @@ export function LeadWorkflowWidget() {
 
   return (
     <section className={`workflow-widget workflow-widget--${phase}`} aria-label="Démonstration d’un traitement automatique de prospect">
-      <div className="workflow-topbar">
-        <span className="workflow-dot" aria-hidden="true" />
-        <span>Flux commercial</span>
-        <span className="workflow-live">En cours</span>
-      </div>
-
       {phase === "detected" && <DetectedProspect revealed={revealed} />}
       {phase === "qualified" && <Qualification revealed={revealed} />}
       {phase === "actions" && <TriggeredActions revealed={revealed} />}
