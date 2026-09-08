@@ -3,6 +3,8 @@ import { LeadWorkflowWidget } from "./components/LeadWorkflowWidget";
 
 const projects = [
   { number: "01", title: "Speed-to-Lead", description: "À chaque demande entrante, le contexte et la prochaine action sont prêts avant la première réponse.", href: "#speed-to-lead" },
+  { number: "02", title: "Recherche B2B", description: "Un dossier sourcé pour préparer une prise de contact qui a une vraie raison d’exister.", href: "#projets" },
+  { number: "03", title: "Agent vocal", description: "Des conversations téléphoniques naturelles, en temps réel, avec reprise de main humaine.", href: "#projets" },
 ];
 
 export default function Home() {
