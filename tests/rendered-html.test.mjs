@@ -27,8 +27,8 @@ test("server-renders the portfolio and its concrete project context", async () =
   assert.doesNotMatch(html, /Le bon système ne cherche pas à impressionner/);
   assert.match(html, /Speed-to-Lead/);
   assert.match(html, /Le contexte, avant la réponse/);
-  assert.match(html, /Recherche B2B/);
-  assert.match(html, /Agent vocal/);
+  assert.doesNotMatch(html, /Recherche B2B/);
+  assert.doesNotMatch(html, /Agent vocal/);
   assert.match(html, /Démarrer la conversation/);
   assert.doesNotMatch(html, /codex-preview|SkeletonPreview|react-loading-skeleton/i);
 });
