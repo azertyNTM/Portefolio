@@ -8,7 +8,7 @@ export function RotatingHeroWord() {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    const interval = window.setInterval(() => setIndex((current) => (current + 1) % words.length), 3400);
+    const interval = window.setInterval(() => setIndex((current) => (current + 1) % words.length), 4000);
     return () => window.clearInterval(interval);
   }, []);
 
