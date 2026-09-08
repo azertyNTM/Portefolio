@@ -23,6 +23,8 @@ test("server-renders the portfolio and its concrete project context", async () =
   assert.match(html, /Une demande ne devrait jamais repartir de zéro/);
   assert.match(html, /automatisations métier et des systèmes IA/);
   assert.match(html, /Speed-to-Lead/);
+  assert.match(html, /Suivre un scénario/);
+  assert.match(html, /Une courte démo doit suffire/);
   assert.match(html, /Recherche B2B/);
   assert.match(html, /Voix en temps réel/);
   assert.match(html, /Me parler d’un processus à automatiser/);
