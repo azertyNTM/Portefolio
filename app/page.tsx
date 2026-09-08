@@ -16,11 +16,9 @@ export default function Home() {
       </header>
 
       <section className="hero" aria-labelledby="hero-title">
-        <div><h1 id="hero-title">Des systèmes utiles.<br /><em>Pas du bruit.</em></h1></div>
-        <div className="hero-aside"><p>J’aide les équipes commerciales à supprimer les tâches répétitives et à décider plus vite, sans perdre le contexte humain.</p><a className="button button-primary" href="#projets">Voir les projets <Arrow /></a></div>
+        <div><h1 id="hero-title">J’automatise ce qui ralentit<br /><em>votre entreprise.</em></h1></div>
+        <div className="hero-aside"><p>Je conçois des systèmes et automatisations IA sur mesure pour réduire les tâches manuelles, accélérer vos processus et faire gagner du temps à vos équipes.</p><div className="hero-actions"><a className="button button-primary" href="#projets">Voir mes réalisations <Arrow /></a><a className="button button-secondary" href="#contact">Discuter de votre projet <Arrow /></a></div></div>
       </section>
-
-      <section className="principle" aria-label="Approche"><p>Le bon système ne cherche pas à impressionner. Il rend le travail plus simple, au bon moment.</p></section>
 
       <section className="projects" id="projets" aria-labelledby="projects-title">
         <div className="section-heading"><h2 id="projects-title">Projets récents</h2></div>

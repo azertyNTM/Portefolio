@@ -20,8 +20,11 @@ test("server-renders the portfolio and its concrete project context", async () =
 
   const html = await response.text();
   assert.match(html, /Alexis Automations — Portfolio de systèmes métier/);
-  assert.match(html, /Des systèmes utiles/);
-  assert.match(html, /Pas du bruit/);
+  assert.match(html, /J’automatise ce qui ralentit/);
+  assert.match(html, /votre entreprise/);
+  assert.match(html, /Voir mes réalisations/);
+  assert.match(html, /Discuter de votre projet/);
+  assert.doesNotMatch(html, /Le bon système ne cherche pas à impressionner/);
   assert.match(html, /Speed-to-Lead/);
   assert.match(html, /Le contexte, avant la réponse/);
   assert.match(html, /Recherche B2B/);
