@@ -19,19 +19,19 @@ const sans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Alexis Automations — Portfolio de systèmes métier",
+  title: "Lysere — Portfolio de systèmes métier",
   description: "Automatisations commerciales, recherche B2B et agent vocal : des systèmes conçus pour le travail réel.",
-  metadataBase: new URL("https://alexis-automations-portfolio.instalife.chatgpt.site"),
+  metadataBase: new URL("https://lysere.fr"),
   openGraph: {
-    title: "Alexis Automations — Systèmes pour le travail qui n’attend pas",
+    title: "Lysere — Systèmes pour le travail qui n’attend pas",
     description: "Automatisations commerciales, recherche B2B et agent vocal : trois systèmes documentés sans décor de SaaS.",
     type: "website",
     locale: "fr_FR",
-    images: [{ url: "/og-editorial.png", width: 1731, height: 909, alt: "Alexis Automations — Portfolio de systèmes métier" }],
+    images: [{ url: "/og-editorial.png", width: 1731, height: 909, alt: "Lysere — Portfolio de systèmes métier" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Alexis Automations — Systèmes pour le travail qui n’attend pas",
+    title: "Lysere — Systèmes pour le travail qui n’attend pas",
     description: "Automatisations commerciales, recherche B2B et agent vocal : trois systèmes documentés sans décor de SaaS.",
     images: ["/og-editorial.png"],
   },

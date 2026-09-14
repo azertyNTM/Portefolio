@@ -19,7 +19,7 @@ test("server-renders the portfolio and its concrete project context", async () =
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /Alexis Automations — Portfolio de systèmes métier/);
+  assert.match(html, /Lysere — Portfolio de systèmes métier/);
   assert.match(html, /J’automatise vos/);
   assert.match(html, /tâches répétitives/);
   assert.match(html, /Voir mes réalisations/);
