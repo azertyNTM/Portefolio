@@ -2,8 +2,6 @@ import Image from "next/image";
 import { CaseNarrative } from "./components/CaseNarrative";
 import { DiagnosticSection } from "./components/DiagnosticSection";
 import { LeadWorkflowWidget } from "./components/LeadWorkflowWidget";
-import { RotatingHeroWord } from "./components/RotatingHeroWord";
-import { CONTACT_EMAIL } from "./config";
 
 const problems = [
   ["Les mêmes informations sont ressaisies.", "Vos logiciels possèdent déjà une partie des données nécessaires, mais quelqu’un doit encore les déplacer ou les reformater."],
@@ -47,7 +45,7 @@ export default function Home() {
       </header>
 
       <section className="hero" aria-labelledby="hero-title">
-        <div className="hero-copy"><h1 id="hero-title">J’automatise vos<br /><em><RotatingHeroWord /></em></h1><div className="hero-aside"><p>Je conçois des systèmes sur mesure pour réduire les tâches manuelles, connecter vos outils et accélérer le travail de vos équipes.</p><div className="hero-actions"><a className="button button-primary" href="#contact">Parler de votre processus</a><a className="button button-secondary" href="#automatisation">Voir ce que j’automatise</a></div></div></div>
+        <div className="hero-copy"><h1 id="hero-title">J’automatise vos<br /><em>processus.</em></h1><div className="hero-aside"><p>Je conçois des systèmes sur mesure pour réduire les tâches manuelles, connecter vos outils et accélérer le travail de vos équipes.</p><div className="hero-actions"><a className="button button-primary" href="#contact">Parler de votre processus</a><a className="button button-secondary" href="#automatisation">Voir ce que j’automatise</a></div></div></div>
         <LeadWorkflowWidget />
       </section>
 
@@ -83,7 +81,7 @@ export default function Home() {
 
       <DiagnosticSection />
 
-      <section className="contact" id="contact" aria-labelledby="contact-title"><span className="section-label section-label--light">UN PROCESSUS EN TÊTE ?</span><h2 id="contact-title">Parlons du travail<br />qui revient trop souvent.</h2><p>Pas besoin d’avoir déjà imaginé la solution. Expliquez-moi simplement comment le processus fonctionne aujourd’hui et ce qui vous fait perdre du temps.</p>{CONTACT_EMAIL ? <a className="button button-light" href={`mailto:${CONTACT_EMAIL}?subject=Processus%20%C3%A0%20automatiser`}>Discuter de votre processus</a> : <span className="button button-light is-disabled" aria-disabled="true" title="Adresse de contact à renseigner">Discuter de votre processus</span>}<p className="contact-note">Une situation réelle suffit pour commencer.{!CONTACT_EMAIL && " · Adresse de contact à venir"}</p></section>
+      <section className="contact" id="contact" aria-labelledby="contact-title"><span className="section-label section-label--light">UN PROCESSUS EN TÊTE ?</span><h2 id="contact-title">Parlons du travail<br />qui revient trop souvent.</h2><p>Pas besoin d’avoir déjà imaginé la solution. Expliquez-moi simplement comment le processus fonctionne aujourd’hui et ce qui vous fait perdre du temps.</p><p className="contact-note">Une situation réelle suffit pour commencer.</p></section>
       <footer><a className="brand-lockup brand-lockup--footer" href="#top" aria-label="Lysere — Retour en haut"><Image src="/lysere-logo-horizontal.svg" alt="" width={560} height={220} /></a><p>Automatisations et systèmes sur mesure.</p></footer>
     </main>
   );

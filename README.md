@@ -10,7 +10,7 @@ La homepage présente :
 - l’intégration avec les outils existants ;
 - la méthode Lysere et un mini-diagnostic interactif.
 
-L’adresse professionnelle utilisée par le CTA final doit être renseignée dans `app/config.ts` après validation.
+Le site ne présente aucun contact e-mail tant qu’une adresse professionnelle Lysere n’est pas définie.
 
 ## Stack
 
