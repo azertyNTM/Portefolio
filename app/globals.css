@@ -75,10 +75,10 @@ main { overflow: clip; }
 
 .section { padding: 126px 0; }
 .section + .section { border-top: 1px solid var(--line); }
-.section-intro { display: grid; grid-template-columns: minmax(170px, .36fr) minmax(0, 1fr); column-gap: 44px; }
-.section-label, .item-number { color: var(--blue); font-family: var(--font-mono), monospace; font-size: 10px; line-height: 1.4; letter-spacing: .07em; }
-.section-intro h2 { max-width: 850px; margin: -6px 0 0; font-size: clamp(39px, 5vw, 68px); font-weight: 600; line-height: .98; letter-spacing: -.075em; }
-.section-copy { grid-column: 2; max-width: 600px; margin-top: 35px; color: var(--muted); font-size: 16px; }
+.section-intro { max-width: 900px; }
+.item-number { color: var(--blue); font-family: var(--font-mono), monospace; font-size: 10px; line-height: 1.4; letter-spacing: .07em; }
+.section-intro h2 { max-width: 850px; margin: 0; font-size: clamp(39px, 5vw, 68px); font-weight: 600; line-height: .98; letter-spacing: -.075em; }
+.section-copy { max-width: 600px; margin-top: 35px; color: var(--muted); font-size: 16px; }
 .section-copy p { margin: 0 0 14px; }
 
 .numbered-list { margin-top: 84px; border-bottom: 1px solid var(--line); }
@@ -114,8 +114,6 @@ main { overflow: clip; }
 .narrative-steps p { max-width: 490px; margin: 0 0 22px; color: var(--muted); font-size: 15px; }
 
 .integration { width: 100%; max-width: none; min-height: 730px; display: grid; grid-template-columns: minmax(380px, 560px) minmax(440px, 610px); justify-content: center; gap: clamp(50px, 8vw, 130px); padding-inline: max(24px, calc((100vw - 1180px) / 2)); background: var(--soft); }
-.integration .section-intro { display: block; }
-.integration .section-intro h2 { margin-top: 25px; }
 .integration .section-copy { margin-top: 35px; }
 .integration-map { position: relative; min-height: 480px; align-self: center; }
 .integration-map::before, .integration-map::after { content: ""; position: absolute; inset: 12% 21%; border: 1px solid var(--line); border-radius: 50%; }
@@ -132,18 +130,8 @@ main { overflow: clip; }
 .map-node-6 { top: 19%; left: 0; }.map-node-6::after { left: 92px; transform: rotate(23deg); }
 
 .value { background: var(--white); }
-.diagnostic-list { margin-top: 78px; border-bottom: 1px solid var(--line); }
-.diagnostic-list button { width: 100%; display: grid; grid-template-columns: 110px 1fr 30px; gap: 24px; align-items: center; padding: 24px 8px 24px 0; color: var(--ink); background: transparent; border: 0; border-top: 1px solid var(--line); text-align: left; cursor: pointer; transition: padding .2s ease, background .2s ease; }
-.diagnostic-list button:hover { padding-inline: 14px; background: var(--soft); }
-.diagnostic-list button > span { color: var(--blue); font-family: var(--font-mono), monospace; font-size: 10px; }
-.diagnostic-list button strong { font-family: var(--font-display), sans-serif; font-size: 20px; font-weight: 600; letter-spacing: -.035em; }
-.diagnostic-list button i { color: var(--blue); font-size: 17px; font-style: normal; }
-.diagnostic-list button.is-selected { background: var(--soft); }
-.diagnostic-result { min-height: 76px; padding: 22px 0; color: var(--muted); font-size: 14px; transition: color .25s ease; }
-.diagnostic-result.is-visible { color: var(--blue); font-weight: 700; }
 
 .contact { width: min(calc(100% - 48px), 1280px); margin-inline: auto; padding: 76px max(30px, 8vw); color: var(--white); background: var(--blue); }
-.section-label--light { color: rgba(255,255,255,.7); }
 .contact h2 { margin: 25px 0; font-size: clamp(40px, 5.6vw, 76px); font-weight: 600; line-height: .96; letter-spacing: -.075em; }
 .contact > p:not(.contact-note) { max-width: 590px; margin: 0 0 30px; color: rgba(255,255,255,.8); }
 .contact-note { margin: 42px 0 0; color: rgba(255,255,255,.7); font-family: var(--font-mono), monospace; font-size: 11px; }
@@ -180,8 +168,7 @@ footer p { margin: 0; }
   .workflow-widget { max-width: 360px; margin-top: 54px; }
   .section { padding: 88px 0; }
   .automation, .integration { width: 100%; padding-inline: 16px; }
-  .section-intro { display: block; }
-  .section-intro h2 { margin-top: 25px; font-size: clamp(38px, 10vw, 54px); }
+  .section-intro h2 { font-size: clamp(38px, 10vw, 54px); }
   .section-copy { margin-top: 28px; }
   .numbered-list { margin-top: 58px; }
   .numbered-list article { display: block; padding: 25px 0; }
@@ -197,10 +184,6 @@ footer p { margin: 0; }
   .integration { min-height: 0; display: block; }
   .integration-map { width: min(100%, 520px); min-height: 430px; margin: 58px auto 0; }
   .map-node { width: 102px; font-size: 8px; }
-  .diagnostic-list { margin-top: 58px; }
-  .diagnostic-list button { grid-template-columns: 36px 1fr 22px; gap: 12px; padding: 20px 0; }
-  .diagnostic-list button:hover { padding-inline: 0; }
-  .diagnostic-list button strong { font-size: 17px; }
   .contact { width: calc(100% - 32px); padding: 54px 26px; }
   .contact h2 { font-size: 43px; }
   footer { min-height: 76px; padding-block: 18px; }

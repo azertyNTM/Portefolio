@@ -8,7 +8,7 @@ La homepage présente :
 - les domaines commercial, administratif, opérationnel et support ;
 - le fonctionnement d’un flux automatisé ;
 - l’intégration avec les outils existants ;
-- la méthode Lysere et un mini-diagnostic interactif.
+- la méthode Lysere et les bénéfices attendus d’un processus plus fluide.
 
 Le site ne présente aucun contact e-mail tant qu’une adresse professionnelle Lysere n’est pas définie.
 

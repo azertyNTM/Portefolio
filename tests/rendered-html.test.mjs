@@ -26,10 +26,10 @@ test("server-renders the Lysere commercial homepage", async () => {
   assert.match(html, /Beaucoup de travail ne devrait/);
   assert.match(html, /Votre processus d’abord/);
   assert.match(html, /Vos outils restent/);
-  assert.match(html, /Commencez par le travail/);
   assert.match(html, /Une situation réelle suffit pour commencer/);
   assert.doesNotMatch(html, /Speed-to-Lead|Recherche B2B|Agent vocal|Voir mes réalisations/);
   assert.doesNotMatch(html, /bonjour@votredomaine\.fr/);
   assert.doesNotMatch(html, /Adresse de contact à venir|mailto:/);
+  assert.doesNotMatch(html, /LÀ OÙ LE TRAVAIL RALENTIT|PAR OÙ COMMENCER|UN PROCESSUS EN TÊTE|Commencez par le travail/);
   assert.doesNotMatch(html, /codex-preview|SkeletonPreview|react-loading-skeleton/i);
 });

@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { CaseNarrative } from "./components/CaseNarrative";
-import { DiagnosticSection } from "./components/DiagnosticSection";
 import { LeadWorkflowWidget } from "./components/LeadWorkflowWidget";
 
 const problems = [
@@ -50,45 +49,43 @@ export default function Home() {
       </section>
 
       <section className="section problems" aria-labelledby="problems-title">
-        <SectionIntro label="LÀ OÙ LE TRAVAIL RALENTIT" id="problems-title" title={<>Beaucoup de travail ne devrait<br />plus être manuel.</>}><p>Une information copiée d’un outil à l’autre. Un document qu’il faut encore ouvrir, lire puis ressaisir. Un prospect qu’il faut rechercher avant de pouvoir lui répondre. Une relance qui dépend de quelqu’un qui doit penser à la faire. Une demande qui attend parce que l’information nécessaire se trouve ailleurs.</p><p>Pris séparément, ce sont quelques minutes.<br />Répétés chaque jour, ce sont des heures.</p></SectionIntro>
+        <SectionIntro id="problems-title" title={<>Beaucoup de travail ne devrait<br />plus être manuel.</>}><p>Une information copiée d’un outil à l’autre. Un document qu’il faut encore ouvrir, lire puis ressaisir. Un prospect qu’il faut rechercher avant de pouvoir lui répondre. Une relance qui dépend de quelqu’un qui doit penser à la faire. Une demande qui attend parce que l’information nécessaire se trouve ailleurs.</p><p>Pris séparément, ce sont quelques minutes.<br />Répétés chaque jour, ce sont des heures.</p></SectionIntro>
         <NumberedList items={problems} />
       </section>
 
       <section className="section automation" id="automatisation" aria-labelledby="automation-title">
-        <SectionIntro label="PAS UN CATALOGUE DE SOLUTIONS" id="automation-title" title={<>Votre processus d’abord.<br />La technologie ensuite.</>}><p>Je ne pars pas d’une automatisation préfabriquée.</p><p>Je regarde comment le travail circule aujourd’hui, quelles étapes prennent du temps et lesquelles peuvent être prises en charge par un système.</p></SectionIntro>
+        <SectionIntro id="automation-title" title={<>Votre processus d’abord.<br />La technologie ensuite.</>}><p>Je ne pars pas d’une automatisation préfabriquée.</p><p>Je regarde comment le travail circule aujourd’hui, quelles étapes prennent du temps et lesquelles peuvent être prises en charge par un système.</p></SectionIntro>
         <div className="area-grid">{automationAreas.map((area, index) => <article className="area" key={area.name}><span className="item-number">{String(index + 1).padStart(2, "0")} — {area.name}</span><h3>{area.title}</h3><p>{area.copy}</p><ul className="tags" aria-label={`Domaines liés à ${area.name}`}>{area.tags.map((tag) => <li key={tag}>{tag}</li>)}</ul></article>)}</div>
       </section>
 
       <section className="section workflow" aria-labelledby="workflow-title">
-        <SectionIntro label="UN FLUX, PAS UNE BOÎTE NOIRE" id="workflow-title" title={<>Une information entre.<br />Le système fait le reste.</>} />
+        <SectionIntro id="workflow-title" title={<>Une information entre.<br />Le système fait le reste.</>} />
         <CaseNarrative />
       </section>
 
       <section className="section integration" aria-labelledby="integration-title">
-        <div className="integration-copy"><SectionIntro label="INTÉGRATION" id="integration-title" title={<>Vos outils restent<br />vos outils.</>}><p>Pas besoin de reconstruire votre entreprise autour d’un nouvel outil.</p><p>Une bonne automatisation doit s’adapter à votre façon de travailler. Pas l’inverse.</p><p>L’objectif n’est pas d’ajouter une plateforme de plus. C’est de faire travailler ensemble celles que vous avez déjà.</p></SectionIntro></div>
+        <div className="integration-copy"><SectionIntro id="integration-title" title={<>Vos outils restent<br />vos outils.</>}><p>Pas besoin de reconstruire votre entreprise autour d’un nouvel outil.</p><p>Une bonne automatisation doit s’adapter à votre façon de travailler. Pas l’inverse.</p><p>L’objectif n’est pas d’ajouter une plateforme de plus. C’est de faire travailler ensemble celles que vous avez déjà.</p></SectionIntro></div>
         <div className="integration-map" aria-label="Le processus relie les outils existants"><div className="map-center">VOTRE<br />PROCESSUS</div>{connectedTools.map((tool, index) => <div className={`map-node map-node-${index + 1}`} key={tool}><span>{tool}</span></div>)}</div>
       </section>
 
       <section className="section method" id="methode" aria-labelledby="method-title">
-        <SectionIntro label="COMPRENDRE AVANT D’AUTOMATISER" id="method-title" title={<>Comprendre le flux.<br />Construire juste.</>} />
+        <SectionIntro id="method-title" title={<>Comprendre le flux.<br />Construire juste.</>} />
         <NumberedList items={methodSteps} />
       </section>
 
       <section className="section value" aria-labelledby="value-title">
-        <SectionIntro label="L’IA N’EST PAS LE RÉSULTAT" id="value-title" title={<>La technologie doit disparaître<br />derrière le travail.</>}><p>Une automatisation n’a pas de valeur parce qu’elle utilise de l’IA.</p><p>Elle a de la valeur lorsqu’elle réduit quelque chose de concret.</p></SectionIntro>
+        <SectionIntro id="value-title" title={<>La technologie doit disparaître<br />derrière le travail.</>}><p>Une automatisation n’a pas de valeur parce qu’elle utilise de l’IA.</p><p>Elle a de la valeur lorsqu’elle réduit quelque chose de concret.</p></SectionIntro>
         <NumberedList items={values} />
       </section>
 
-      <DiagnosticSection />
-
-      <section className="contact" id="contact" aria-labelledby="contact-title"><span className="section-label section-label--light">UN PROCESSUS EN TÊTE ?</span><h2 id="contact-title">Parlons du travail<br />qui revient trop souvent.</h2><p>Pas besoin d’avoir déjà imaginé la solution. Expliquez-moi simplement comment le processus fonctionne aujourd’hui et ce qui vous fait perdre du temps.</p><p className="contact-note">Une situation réelle suffit pour commencer.</p></section>
+      <section className="contact" id="contact" aria-labelledby="contact-title"><h2 id="contact-title">Parlons du travail<br />qui revient trop souvent.</h2><p>Pas besoin d’avoir déjà imaginé la solution. Expliquez-moi simplement comment le processus fonctionne aujourd’hui et ce qui vous fait perdre du temps.</p><p className="contact-note">Une situation réelle suffit pour commencer.</p></section>
       <footer><a className="brand-lockup brand-lockup--footer" href="#top" aria-label="Lysere — Retour en haut"><Image src="/lysere-logo-horizontal.svg" alt="" width={560} height={220} /></a><p>Automatisations et systèmes sur mesure.</p></footer>
     </main>
   );
 }
 
-function SectionIntro({ label, id, title, children }: { label: string; id: string; title: React.ReactNode; children?: React.ReactNode }) {
-  return <div className="section-intro"><span className="section-label">{label}</span><h2 id={id}>{title}</h2>{children && <div className="section-copy">{children}</div>}</div>;
+function SectionIntro({ id, title, children }: { id: string; title: React.ReactNode; children?: React.ReactNode }) {
+  return <div className="section-intro"><h2 id={id}>{title}</h2>{children && <div className="section-copy">{children}</div>}</div>;
 }
 
 function NumberedList({ items }: { items: string[][] }) {
