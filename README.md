@@ -1,14 +1,16 @@
-# Alexis Automations
+# Lysere
 
-Portfolio éditorial d’Alexis, consacré à la conception de systèmes métier et d’automatisations IA.
+Site commercial de Lysere, consacré à la conception d’automatisations et de systèmes sur mesure pour les entreprises.
 
-## Projets présentés
+La homepage présente :
 
-- **Speed-to-Lead** : traitement d’un prospect entrant, récupération de contexte, qualification et préparation de la prochaine action.
-- **Recherche B2B** : création d’un dossier de prospection sourcé à partir d’une entreprise, de ses dirigeants et de ses signaux commerciaux.
-- **Voix en temps réel** : agent téléphonique capable de converser en streaming, de répondre rapidement et de laisser naturellement la parole à l’interlocuteur.
+- les problèmes métier qui se prêtent à l’automatisation ;
+- les domaines commercial, administratif, opérationnel et support ;
+- le fonctionnement d’un flux automatisé ;
+- l’intégration avec les outils existants ;
+- la méthode Lysere et un mini-diagnostic interactif.
 
-Les emplacements de démonstration sont conçus pour recevoir les futures vidéos, captures d’écran et extraits audio issus des systèmes réels.
+L’adresse professionnelle utilisée par le CTA final doit être renseignée dans `app/config.ts` après validation.
 
 ## Stack
 

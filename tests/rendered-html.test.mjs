@@ -13,22 +13,22 @@ async function render() {
   );
 }
 
-test("server-renders the portfolio and its concrete project context", async () => {
+test("server-renders the Lysere commercial homepage", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /Lysere — Portfolio de systèmes métier/);
+  assert.match(html, /Lysere — Automatisation de processus sur mesure/);
   assert.match(html, /J’automatise vos/);
-  assert.match(html, /tâches répétitives/);
-  assert.match(html, /Voir mes réalisations/);
-  assert.match(html, /Discuter de votre projet/);
-  assert.doesNotMatch(html, /Le bon système ne cherche pas à impressionner/);
-  assert.match(html, /Speed-to-Lead/);
-  assert.doesNotMatch(html, /Le contexte, avant la réponse/);
-  assert.match(html, /Recherche B2B/);
-  assert.match(html, /Agent vocal/);
-  assert.match(html, /Démarrer la conversation/);
+  assert.match(html, /processus\./);
+  assert.match(html, /Parler de votre processus/);
+  assert.match(html, /Beaucoup de travail ne devrait/);
+  assert.match(html, /Votre processus d’abord/);
+  assert.match(html, /Vos outils restent/);
+  assert.match(html, /Commencez par le travail/);
+  assert.match(html, /Discuter de votre processus/);
+  assert.doesNotMatch(html, /Speed-to-Lead|Recherche B2B|Agent vocal|Voir mes réalisations/);
+  assert.doesNotMatch(html, /bonjour@votredomaine\.fr/);
   assert.doesNotMatch(html, /codex-preview|SkeletonPreview|react-loading-skeleton/i);
 });

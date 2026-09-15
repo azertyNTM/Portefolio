@@ -19,20 +19,20 @@ const sans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Lysere — Automatisations sur mesure",
-  description: "Automatisations commerciales, recherche B2B et agent vocal : des systèmes conçus pour le travail réel.",
+  title: "Lysere — Automatisation de processus sur mesure",
+  description: "Lysere conçoit des automatisations sur mesure pour réduire les tâches manuelles, connecter les outils et accélérer les processus des entreprises.",
   metadataBase: new URL("https://lysere.fr"),
   openGraph: {
-    title: "Lysere — Systèmes pour le travail qui n’attend pas",
-    description: "Automatisations commerciales, recherche B2B et agent vocal : trois systèmes documentés sans décor de SaaS.",
+    title: "Lysere — Automatisation de processus sur mesure",
+    description: "Des systèmes sur mesure pour réduire les tâches manuelles, connecter les outils et accélérer les processus des entreprises.",
     type: "website",
     locale: "fr_FR",
-    images: [{ url: "/og-editorial.png", width: 1731, height: 909, alt: "Lysere — Portfolio de systèmes métier" }],
+    images: [{ url: "/og-editorial.png", width: 1731, height: 909, alt: "Lysere — Automatisation de processus sur mesure" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lysere — Systèmes pour le travail qui n’attend pas",
-    description: "Automatisations commerciales, recherche B2B et agent vocal : trois systèmes documentés sans décor de SaaS.",
+    title: "Lysere — Automatisation de processus sur mesure",
+    description: "Des systèmes sur mesure pour réduire les tâches manuelles, connecter les outils et accélérer les processus des entreprises.",
     images: ["/og-editorial.png"],
   },
   icons: {

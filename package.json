@@ -1,6 +1,6 @@
 {
-  "name": "alexis-automations-portfolio",
-  "description": "Portfolio éditorial d’automatisations métier, de recherche B2B et d’agents vocaux.",
+  "name": "lysere-site",
+  "description": "Site commercial de Lysere, conception d’automatisations et de systèmes sur mesure.",
   "version": "0.1.0",
   "private": true,
   "engines": {
