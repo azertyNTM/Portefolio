@@ -19,7 +19,7 @@ const sans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Lysere — Portfolio de systèmes métier",
+  title: "Lysere — Automatisations sur mesure",
   description: "Automatisations commerciales, recherche B2B et agent vocal : des systèmes conçus pour le travail réel.",
   metadataBase: new URL("https://lysere.fr"),
   openGraph: {
@@ -36,8 +36,8 @@ export const metadata: Metadata = {
     images: ["/og-editorial.png"],
   },
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    icon: "/lysere-favicon.svg",
+    shortcut: "/lysere-favicon.svg",
   },
 };
 

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="400 105 425 645" role="img" aria-labelledby="title">
+  <title id="title">Lysere</title>
+  <defs>
+    <linearGradient id="gradVertical" x1="430" y1="650" x2="555" y2="145" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#07172f"/><stop offset="0.52" stop-color="#1b49c8"/><stop offset="1" stop-color="#34bdf2"/></linearGradient>
+    <linearGradient id="gradFold" x1="430" y1="650" x2="540" y2="725" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0d2b59"/><stop offset="1" stop-color="#278ce8"/></linearGradient>
+    <linearGradient id="gradBase" x1="455" y1="700" x2="790" y2="610" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#081a36"/><stop offset="1" stop-color="#172b4d"/></linearGradient>
+    <linearGradient id="gradSpark" x1="575" y1="490" x2="650" y2="575" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3fb6ff"/><stop offset="1" stop-color="#2769ff"/></linearGradient>
+  </defs>
+  <path d="M 430 215 L 548 135 L 548 505 C 548 534 536 556 517 575 L 430 653 Z" fill="url(#gradVertical)"/>
+  <path d="M 430 653 L 517 575 L 548 548 L 548 612 C 548 625 543 637 535 647 L 463 719 C 441 710 430 691 430 663 Z" fill="url(#gradFold)"/>
+  <path d="M 463 719 C 443 712 430 692 430 666 L 430 653 L 517 575 L 548 548 L 548 612 L 792 612 L 695 719 Z" fill="url(#gradBase)"/>
+  <path d="M 613 468 C 619 505 638 524 675 530 C 638 536 619 555 613 592 C 607 555 588 536 551 530 C 588 524 607 505 613 468 Z" fill="url(#gradSpark)"/>
+</svg>
