@@ -14,5 +14,11 @@
   },
   "cache": {
     "enabled": true
-  }
+  },
+  "routes": [
+    {
+      "pattern": "lysere.fr",
+      "custom_domain": true
+    }
+  ]
 }
