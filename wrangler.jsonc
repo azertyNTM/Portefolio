@@ -2,7 +2,7 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "lysere",
   "account_id": "4862005e5335693f56a1290834e0a36e",
-  "compatibility_date": "2026-09-14",
+  "compatibility_date": "2026-05-22",
   "compatibility_flags": [
     "nodejs_compat"
   ],

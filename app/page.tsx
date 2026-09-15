@@ -11,7 +11,9 @@ export default function Home() {
   return (
     <main id="top">
       <header className="site-header">
-        <a className="wordmark" href="#top" aria-label="Retour à l’accueil">Lysere<span>.</span></a>
+        <a className="brand-lockup" href="#top" aria-label="Lysere — Retour à l’accueil">
+          <img src="/lysere-logo-horizontal.svg" alt="" width="560" height="220" />
+        </a>
         <nav aria-label="Navigation principale"><a href="#projets">Projets</a><a href="#methode">Méthode</a></nav>
         <a className="header-cta" href="#contact">Me contacter</a>
       </header>
@@ -29,7 +31,7 @@ export default function Home() {
       <section className="method" id="methode" aria-labelledby="method-title"><div><h2 id="method-title">Comprendre le flux.<br />Construire juste.</h2><p>Je pars du travail réel : une information manquante, une décision qui attend, une tâche répétée. Puis je crée un système lisible, testable et facile à reprendre.</p></div></section>
 
       <section className="contact" id="contact" aria-labelledby="contact-title"><h2 id="contact-title">Parlons du travail<br />qui revient trop souvent.</h2><a className="button button-light" href="mailto:bonjour@votredomaine.fr?subject=Processus%20%C3%A0%20automatiser">Démarrer la conversation</a><p className="contact-note">bonjour@votredomaine.fr</p></section>
-      <footer><a className="wordmark" href="#top">Lysere<span>.</span></a></footer>
+      <footer><a className="brand-lockup brand-lockup--footer" href="#top" aria-label="Lysere — Retour en haut"><img src="/lysere-logo-horizontal.svg" alt="" width="560" height="220" /></a></footer>
     </main>
   );
 }
