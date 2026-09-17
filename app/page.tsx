@@ -10,27 +10,22 @@ const problems = [
 ];
 
 const automationAreas = [
-  { name: "Commercial", title: "Réagir plus vite aux opportunités.", copy: "Qualifier les demandes, enrichir les prospects, préparer le contexte, déclencher les relances et maintenir les informations à jour.", tags: ["qualification", "CRM", "prospection", "relances"] },
-  { name: "Administration", title: "Faire disparaître une partie de la ressaisie.", copy: "Extraire des informations, traiter des documents, classer les demandes et faire circuler les données entre vos outils.", tags: ["documents", "saisie", "classement", "transfert"] },
-  { name: "Opérations", title: "Faire circuler le travail automatiquement.", copy: "Déclencher des actions, synchroniser différents logiciels et éviter les étapes intermédiaires inutiles.", tags: ["workflows", "API", "synchronisation", "alertes"] },
-  { name: "Support", title: "Faire arriver la demande au bon endroit avec le bon contexte.", copy: "Comprendre une demande, rechercher l’information disponible et préparer ou transmettre la bonne réponse.", tags: ["tri", "routage", "recherche", "réponses"] },
+  { name: "Commercial", title: "Réagir plus vite aux opportunités.", copy: "Qualifier les demandes, enrichir les prospects, préparer le contexte, déclencher les relances et maintenir les informations à jour." },
+  { name: "Administration", title: "Faire disparaître une partie de la ressaisie.", copy: "Extraire des informations, traiter des documents, classer les demandes et faire circuler les données entre vos outils." },
+  { name: "Opérations", title: "Faire circuler le travail automatiquement.", copy: "Déclencher des actions, synchroniser différents logiciels et éviter les étapes intermédiaires inutiles." },
+  { name: "Support", title: "Faire arriver la demande au bon endroit avec le bon contexte.", copy: "Comprendre une demande, rechercher l’information disponible et préparer ou transmettre la bonne réponse." },
 ];
 
 const methodSteps = [
-  ["Observer", "Comprendre le processus tel qu’il existe réellement : les personnes, les outils, les informations et les décisions."],
-  ["Identifier", "Repérer les étapes répétitives, lentes ou susceptibles de provoquer des erreurs."],
-  ["Concevoir", "Déterminer ce qui doit être automatisé, ce qui doit rester humain et comment les deux doivent communiquer."],
-  ["Construire", "Créer le système autour de vos outils et de vos contraintes."],
-  ["Mesurer", "Vérifier que le processus est réellement devenu plus rapide, plus simple ou plus fiable."],
+  ["Comprendre", "Observer le processus tel qu’il fonctionne réellement : les personnes, les outils, les informations et les décisions."],
+  ["Cibler", "Choisir un problème prioritaire, assez précis pour être traité et évalué sans bouleverser toute l’entreprise."],
+  ["Construire", "Créer une première version autour de vos outils, de vos règles et des points qui doivent rester humains."],
+  ["Tester", "Faire fonctionner le système dans les conditions réelles et regarder où il aide — ou où il doit être ajusté."],
+  ["Mesurer", "Comparer le temps de traitement, les étapes manuelles, les délais, les erreurs ou le volume traité."],
+  ["Étendre", "Aller plus loin uniquement si la première automatisation apporte une amélioration observable."],
 ];
 
-const values = [
-  ["Moins de tâches répétitives", "Les équipes passent moins de temps à copier, rechercher, classer et transmettre des informations."],
-  ["Moins d’attente", "Les prochaines étapes peuvent être déclenchées dès que les informations nécessaires sont disponibles."],
-  ["Moins d’oublis", "Le processus ne dépend plus entièrement de quelqu’un qui doit penser à effectuer l’action suivante."],
-  ["Plus de contexte", "Lorsqu’une personne doit intervenir, les informations nécessaires sont déjà rassemblées."],
-  ["Des processus plus simples à faire évoluer", "Le fonctionnement devient explicite plutôt que dispersé entre plusieurs outils et habitudes internes."],
-];
+const measures = ["Temps de traitement", "Étapes manuelles", "Délais de réponse", "Erreurs ou oublis", "Volume traité", "Temps humain mobilisé"];
 
 const connectedTools = ["CRM", "MAIL", "FORMULAIRE", "DOCUMENTS", "API", "LOGICIEL MÉTIER"];
 
@@ -44,7 +39,7 @@ export default function Home() {
       </header>
 
       <section className="hero" aria-labelledby="hero-title">
-        <div className="hero-copy"><h1 id="hero-title">J’automatise vos<br /><em>processus.</em></h1><div className="hero-aside"><p>Je conçois des systèmes sur mesure pour réduire les tâches manuelles, connecter vos outils et accélérer le travail de vos équipes.</p><div className="hero-actions"><a className="button button-primary" href="#contact">Parler de votre processus</a><a className="button button-secondary" href="#automatisation">Voir ce que j’automatise</a></div></div></div>
+        <div className="hero-copy"><h1 id="hero-title">J’automatise vos<br /><em>processus.</em></h1><div className="hero-aside"><p>Je conçois des systèmes sur mesure pour réduire les tâches manuelles, connecter vos outils et accélérer le travail de vos équipes.</p><div className="hero-actions"><a className="button button-primary" href="#contact">Parler de votre processus</a><a className="button button-secondary" href="#demonstration">Voir un exemple concret</a></div></div></div>
         <LeadWorkflowWidget />
       </section>
 
@@ -55,12 +50,17 @@ export default function Home() {
 
       <section className="section automation" id="automatisation" aria-labelledby="automation-title">
         <SectionIntro id="automation-title" title={<>Votre processus d’abord.<br />La technologie ensuite.</>}><p>Je ne pars pas d’une automatisation préfabriquée.</p><p>Je regarde comment le travail circule aujourd’hui, quelles étapes prennent du temps et lesquelles peuvent être prises en charge par un système.</p></SectionIntro>
-        <div className="area-grid">{automationAreas.map((area, index) => <article className="area" key={area.name}><span className="item-number">{String(index + 1).padStart(2, "0")} — {area.name}</span><h3>{area.title}</h3><p>{area.copy}</p><ul className="tags" aria-label={`Domaines liés à ${area.name}`}>{area.tags.map((tag) => <li key={tag}>{tag}</li>)}</ul></article>)}</div>
+        <div className="area-grid">{automationAreas.map((area, index) => <article className="area" key={area.name}><span className="item-number">{String(index + 1).padStart(2, "0")} — {area.name}</span><h3>{area.title}</h3><p>{area.copy}</p></article>)}</div>
       </section>
 
-      <section className="section workflow" aria-labelledby="workflow-title">
-        <SectionIntro id="workflow-title" title={<>Une information entre.<br />Le système fait le reste.</>} />
+      <section className="section workflow" id="demonstration" aria-labelledby="workflow-title">
+        <SectionIntro eyebrow="Démonstration · Exemple de système" id="workflow-title" title={<>Une demande arrive.<br />La suite se prépare.</>}><p>Voici un flux possible : le système comprend les informations, retrouve le contexte utile et prépare l’étape suivante. Ce n’est pas un cas client, mais une représentation concrète de ce qui peut être construit.</p></SectionIntro>
         <CaseNarrative />
+        <div className="control-strip" aria-label="Principes de contrôle du système">
+          <article><span>01</span><h3>Accès limité au nécessaire</h3><p>Le système utilise uniquement les outils et les informations utiles au processus.</p></article>
+          <article><span>02</span><h3>Validation quand elle compte</h3><p>Une étape sensible ou ambiguë peut rester soumise à une personne.</p></article>
+          <article><span>03</span><h3>Un flux qui reste lisible</h3><p>Les règles, les actions et les points de reprise sont définis dès la conception.</p></article>
+        </div>
       </section>
 
       <section className="section integration" aria-labelledby="integration-title">
@@ -69,13 +69,17 @@ export default function Home() {
       </section>
 
       <section className="section method" id="methode" aria-labelledby="method-title">
-        <SectionIntro id="method-title" title={<>Comprendre le flux.<br />Construire juste.</>} />
+        <SectionIntro eyebrow="Une première amélioration, pas un grand chantier" id="method-title" title={<>Commencer petit.<br />Vérifier dans le réel.</>}><p>Pas besoin d’automatiser toute votre entreprise. On part d’un processus précis, on vérifie ce que le système change, puis on l’étend uniquement si cela se justifie.</p></SectionIntro>
         <NumberedList items={methodSteps} />
       </section>
 
       <section className="section value" aria-labelledby="value-title">
-        <SectionIntro id="value-title" title={<>La technologie doit disparaître<br />derrière le travail.</>}><p>Une automatisation n’a pas de valeur parce qu’elle utilise de l’IA.</p><p>Elle a de la valeur lorsqu’elle réduit quelque chose de concret.</p></SectionIntro>
-        <NumberedList items={values} />
+        <SectionIntro eyebrow="Choisir le moyen le plus simple" id="value-title" title={<>De l’IA seulement<br />lorsqu’elle apporte quelque chose.</>}><p>Quand une règle simple suffit, j’utilise une règle simple. L’objectif n’est pas de mettre de l’IA partout, mais de choisir la solution adaptée au travail à accomplir.</p></SectionIntro>
+        <div className="solution-choice">
+          <article><span className="item-number">AUTOMATISATION SIMPLE</span><h3>Quand les étapes sont connues.</h3><p>Déplacer une donnée, déclencher une action ou synchroniser deux outils ne demande pas nécessairement d’IA.</p></article>
+          <article><span className="item-number">IA UTILE</span><h3>Quand l’information ne rentre pas dans des cases.</h3><p>Comprendre un e-mail, lire un document, retrouver du contexte ou préparer une réponse peut demander plus qu’une règle fixe.</p></article>
+        </div>
+        <div className="measure-panel"><div><span className="item-number">MESURE</span><h3>On regarde ce qui a réellement changé.</h3><p>Les indicateurs dépendent du processus. Ils sont choisis avant d’étendre le système, sans promesse chiffrée inventée.</p></div><ul>{measures.map((measure) => <li key={measure}>{measure}</li>)}</ul></div>
       </section>
 
       <section className="contact" id="contact" aria-labelledby="contact-title"><h2 id="contact-title">Parlons du travail<br />qui revient trop souvent.</h2><p>Pas besoin d’avoir déjà imaginé la solution. Expliquez-moi simplement comment le processus fonctionne aujourd’hui et ce qui vous fait perdre du temps.</p><p className="contact-note">Une situation réelle suffit pour commencer.</p></section>
@@ -84,8 +88,8 @@ export default function Home() {
   );
 }
 
-function SectionIntro({ id, title, children }: { id: string; title: React.ReactNode; children?: React.ReactNode }) {
-  return <div className="section-intro"><h2 id={id}>{title}</h2>{children && <div className="section-copy">{children}</div>}</div>;
+function SectionIntro({ id, title, eyebrow, children }: { id: string; title: React.ReactNode; eyebrow?: string; children?: React.ReactNode }) {
+  return <div className="section-intro">{eyebrow && <p className="section-kicker">{eyebrow}</p>}<h2 id={id}>{title}</h2>{children && <div className="section-copy">{children}</div>}</div>;
 }
 
 function NumberedList({ items }: { items: string[][] }) {
