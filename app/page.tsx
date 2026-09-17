@@ -27,7 +27,7 @@ const methodSteps = [
 
 const measures = ["Temps de traitement", "Étapes manuelles", "Délais de réponse", "Erreurs ou oublis", "Volume traité", "Temps humain mobilisé"];
 
-const connectedTools = ["CRM", "MAIL", "FORMULAIRE", "DOCUMENTS", "API", "LOGICIEL MÉTIER"];
+const connectedTools = ["CRM", "E-mail", "Formulaire", "Documents", "API", "Logiciel métier"];
 
 export default function Home() {
   return (
@@ -50,22 +50,22 @@ export default function Home() {
 
       <section className="section automation" id="automatisation" aria-labelledby="automation-title">
         <SectionIntro id="automation-title" title={<>Votre processus d’abord.<br />La technologie ensuite.</>}><p>Je ne pars pas d’une automatisation préfabriquée.</p><p>Je regarde comment le travail circule aujourd’hui, quelles étapes prennent du temps et lesquelles peuvent être prises en charge par un système.</p></SectionIntro>
-        <div className="area-grid">{automationAreas.map((area, index) => <article className="area" key={area.name}><span className="item-number">{String(index + 1).padStart(2, "0")} — {area.name}</span><h3>{area.title}</h3><p>{area.copy}</p></article>)}</div>
+        <div className="area-grid">{automationAreas.map((area) => <article className="area" key={area.name}><span className="category-label">{area.name}</span><h3>{area.title}</h3><p>{area.copy}</p></article>)}</div>
       </section>
 
       <section className="section workflow" id="demonstration" aria-labelledby="workflow-title">
         <SectionIntro eyebrow="Démonstration · Exemple de système" id="workflow-title" title={<>Une demande arrive.<br />La suite se prépare.</>}><p>Voici un flux possible : le système comprend les informations, retrouve le contexte utile et prépare l’étape suivante. Ce n’est pas un cas client, mais une représentation concrète de ce qui peut être construit.</p></SectionIntro>
         <CaseNarrative />
         <div className="control-strip" aria-label="Principes de contrôle du système">
-          <article><span>01</span><h3>Accès limité au nécessaire</h3><p>Le système utilise uniquement les outils et les informations utiles au processus.</p></article>
-          <article><span>02</span><h3>Validation quand elle compte</h3><p>Une étape sensible ou ambiguë peut rester soumise à une personne.</p></article>
-          <article><span>03</span><h3>Un flux qui reste lisible</h3><p>Les règles, les actions et les points de reprise sont définis dès la conception.</p></article>
+          <article><h3>Accès limité au nécessaire</h3><p>Le système utilise uniquement les outils et les informations utiles au processus.</p></article>
+          <article><h3>Validation quand elle compte</h3><p>Une étape sensible ou ambiguë peut rester soumise à une personne.</p></article>
+          <article><h3>Un flux qui reste lisible</h3><p>Les règles, les actions et les points de reprise sont définis dès la conception.</p></article>
         </div>
       </section>
 
       <section className="section integration" aria-labelledby="integration-title">
         <div className="integration-copy"><SectionIntro id="integration-title" title={<>Vos outils restent<br />vos outils.</>}><p>Pas besoin de reconstruire votre entreprise autour d’un nouvel outil.</p><p>Une bonne automatisation doit s’adapter à votre façon de travailler. Pas l’inverse.</p><p>L’objectif n’est pas d’ajouter une plateforme de plus. C’est de faire travailler ensemble celles que vous avez déjà.</p></SectionIntro></div>
-        <div className="integration-map" aria-label="Le processus relie les outils existants"><div className="map-center">VOTRE<br />PROCESSUS</div>{connectedTools.map((tool, index) => <div className={`map-node map-node-${index + 1}`} key={tool}><span>{tool}</span></div>)}</div>
+        <div className="integration-map" aria-label="Le processus relie les outils existants"><div className="map-center">Votre<br />processus</div>{connectedTools.map((tool, index) => <div className={`map-node map-node-${index + 1}`} key={tool}><span>{tool}</span></div>)}</div>
       </section>
 
       <section className="section method" id="methode" aria-labelledby="method-title">
@@ -76,10 +76,10 @@ export default function Home() {
       <section className="section value" aria-labelledby="value-title">
         <SectionIntro eyebrow="Choisir le moyen le plus simple" id="value-title" title={<>De l’IA seulement<br />lorsqu’elle apporte quelque chose.</>}><p>Quand une règle simple suffit, j’utilise une règle simple. L’objectif n’est pas de mettre de l’IA partout, mais de choisir la solution adaptée au travail à accomplir.</p></SectionIntro>
         <div className="solution-choice">
-          <article><span className="item-number">AUTOMATISATION SIMPLE</span><h3>Quand les étapes sont connues.</h3><p>Déplacer une donnée, déclencher une action ou synchroniser deux outils ne demande pas nécessairement d’IA.</p></article>
-          <article><span className="item-number">IA UTILE</span><h3>Quand l’information ne rentre pas dans des cases.</h3><p>Comprendre un e-mail, lire un document, retrouver du contexte ou préparer une réponse peut demander plus qu’une règle fixe.</p></article>
+          <article><span className="item-number">Automatisation simple</span><h3>Quand les étapes sont connues.</h3><p>Déplacer une donnée, déclencher une action ou synchroniser deux outils ne demande pas nécessairement d’IA.</p></article>
+          <article><span className="item-number">IA utile</span><h3>Quand l’information ne rentre pas dans des cases.</h3><p>Comprendre un e-mail, lire un document, retrouver du contexte ou préparer une réponse peut demander plus qu’une règle fixe.</p></article>
         </div>
-        <div className="measure-panel"><div><span className="item-number">MESURE</span><h3>On regarde ce qui a réellement changé.</h3><p>Les indicateurs dépendent du processus. Ils sont choisis avant d’étendre le système, sans promesse chiffrée inventée.</p></div><ul>{measures.map((measure) => <li key={measure}>{measure}</li>)}</ul></div>
+        <div className="measure-panel"><div><span className="item-number">Ce que l’on mesure</span><h3>On regarde ce qui a réellement changé.</h3><p>Les indicateurs dépendent du processus. Ils sont choisis avant d’étendre le système, sans promesse chiffrée inventée.</p></div><ul>{measures.map((measure) => <li key={measure}>{measure}</li>)}</ul></div>
       </section>
 
       <section className="contact" id="contact" aria-labelledby="contact-title"><h2 id="contact-title">Parlons du travail<br />qui revient trop souvent.</h2><p>Pas besoin d’avoir déjà imaginé la solution. Expliquez-moi simplement comment le processus fonctionne aujourd’hui et ce qui vous fait perdre du temps.</p><p className="contact-note">Une situation réelle suffit pour commencer.</p></section>
@@ -93,5 +93,5 @@ function SectionIntro({ id, title, eyebrow, children }: { id: string; title: Rea
 }
 
 function NumberedList({ items }: { items: string[][] }) {
-  return <div className="numbered-list">{items.map(([title, copy], index) => <article key={title}><span className="item-number">{String(index + 1).padStart(2, "0")}</span><h3>{title}</h3><p>{copy}</p></article>)}</div>;
+  return <div className="numbered-list">{items.map(([title, copy], index) => <article key={title}><span className="item-number">{index + 1}</span><h3>{title}</h3><p>{copy}</p></article>)}</div>;
 }

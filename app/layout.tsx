@@ -1,21 +1,11 @@
 import type { Metadata } from "next";
-import { DM_Mono, DM_Sans, Syne } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
-const display = Syne({
+const display = Plus_Jakarta_Sans({
   variable: "--font-display",
   subsets: ["latin"],
-});
-
-const mono = DM_Mono({
-  variable: "--font-mono",
-  weight: ["400", "500"],
-  subsets: ["latin"],
-});
-
-const sans = DM_Sans({
-  variable: "--font-sans",
-  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -49,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body
-        className={`${display.variable} ${sans.variable} ${mono.variable} antialiased`}
+        className={`${display.variable} antialiased`}
       >
         {children}
       </body>

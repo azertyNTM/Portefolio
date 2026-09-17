@@ -3,12 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 
 const steps = [
-  { title: "La demande arrive", copy: "Un formulaire est envoyé ou un e-mail arrive avec une demande formulée librement.", label: "RÉCEPTION" },
-  { title: "Les informations sont comprises", copy: "Le système repère l’objet de la demande et extrait les éléments nécessaires au traitement.", label: "COMPRÉHENSION" },
-  { title: "Le contexte est retrouvé", copy: "Il récupère uniquement les informations utiles dans le CRM, les documents ou les outils concernés.", label: "CONTEXTE" },
-  { title: "La demande est qualifiée", copy: "Des règles explicites permettent de classer la demande et de déterminer la prochaine étape.", label: "QUALIFICATION" },
-  { title: "L’action est préparée", copy: "Une tâche, une mise à jour ou une réponse peut être préparée avec le contexte déjà rassemblé.", label: "PRÉPARATION" },
-  { title: "Une personne valide si nécessaire", copy: "Si le cas est sensible ou ambigu, le système s’arrête au bon endroit et transmet le dossier à une personne.", label: "VALIDATION" },
+  { title: "La demande arrive", copy: "Un formulaire est envoyé ou un e-mail arrive avec une demande formulée librement.", label: "Réception" },
+  { title: "Les informations sont comprises", copy: "Le système repère l’objet de la demande et extrait les éléments nécessaires au traitement.", label: "Compréhension" },
+  { title: "Le contexte est retrouvé", copy: "Il récupère uniquement les informations utiles dans le CRM, les documents ou les outils concernés.", label: "Contexte" },
+  { title: "La demande est qualifiée", copy: "Des règles explicites permettent de classer la demande et de déterminer la prochaine étape.", label: "Qualification" },
+  { title: "L’action est préparée", copy: "Une tâche, une mise à jour ou une réponse peut être préparée avec le contexte déjà rassemblé.", label: "Préparation" },
+  { title: "Une personne valide si nécessaire", copy: "Si le cas est sensible ou ambigu, le système s’arrête au bon endroit et transmet le dossier à une personne.", label: "Validation" },
 ];
 
 export function CaseNarrative() {
@@ -50,5 +50,5 @@ export function CaseNarrative() {
     };
   }, []);
   const current = steps[active];
-  return <div className="case-narrative"><div className="narrative-art" ref={artRef} aria-hidden="true"><div className="narrative-sheet"><div className="sheet-topline"><span>FLUX / {String(active + 1).padStart(2, "0")} SUR {String(steps.length).padStart(2, "0")}</span></div><strong>{current.label}</strong><div className="sheet-progress"><span style={{ width: `${((active + 1) / steps.length) * 100}%` }} /></div><p>{current.title}</p></div></div><div className="narrative-steps">{steps.map((step, index) => <article key={step.title} data-step={index} ref={(element) => { refs.current[index] = element; }} className={active === index ? "is-active" : ""}><span>{String(index + 1).padStart(2, "0")}</span><h3>{step.title}</h3><p>{step.copy}</p></article>)}</div></div>;
+  return <div className="case-narrative"><div className="narrative-art" ref={artRef} aria-hidden="true"><div className="narrative-sheet"><div className="sheet-topline"><span>Étape {active + 1} sur {steps.length}</span></div><strong>{current.label}</strong><div className="sheet-progress"><span style={{ width: `${((active + 1) / steps.length) * 100}%` }} /></div><p>{current.title}</p></div></div><div className="narrative-steps">{steps.map((step, index) => <article key={step.title} data-step={index} ref={(element) => { refs.current[index] = element; }} className={active === index ? "is-active" : ""}><span>Étape {index + 1}</span><h3>{step.title}</h3><p>{step.copy}</p></article>)}</div></div>;
 }
