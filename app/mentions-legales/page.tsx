@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   robots: { index: false },
 };
 
-// Informations à compléter par Alexis (null = pas encore fourni, affiché en surligné).
+// Informations de l’éditeur (null = pas encore fourni, la ligne est masquée).
 const editeur = {
   nom: "Alexis Eydoux",
   statut: "Entrepreneur individuel (EI), micro-entreprise" as string | null,
@@ -17,8 +17,8 @@ const editeur = {
   tva: "TVA non applicable, article 293 B du Code général des impôts" as string | null,
 };
 
-function Field({ value, hint }: { value: string | null; hint: string }) {
-  return value ? <>{value}</> : <mark className="legal-todo">À compléter : {hint}</mark>;
+function Line({ label, value }: { label: string; value: string | null }) {
+  return value ? <li>{label} : {value}</li> : null;
 }
 
 export default function MentionsLegales() {
@@ -37,12 +37,12 @@ export default function MentionsLegales() {
         <p>Le site lysere.fr est édité par :</p>
         <ul>
           <li><strong>{editeur.nom} EI</strong>, sous le nom commercial Lysere</li>
-          <li>Statut : <Field value={editeur.statut} hint="statut de l’entreprise" /></li>
-          <li>SIRET : <Field value={editeur.siret} hint="numéro SIRET" /></li>
-          <li>Adresse : <Field value={editeur.adresse} hint="adresse de l’entreprise" /></li>
-          <li>Téléphone : <Field value={editeur.telephone} hint="numéro de téléphone" /></li>
+          <Line label="Statut" value={editeur.statut} />
+          <Line label="SIRET" value={editeur.siret} />
+          <Line label="Adresse" value={editeur.adresse} />
+          <Line label="Téléphone" value={editeur.telephone} />
           <li>E-mail : <a href="mailto:contact@lysere.fr">contact@lysere.fr</a></li>
-          <li>TVA : <Field value={editeur.tva} hint="régime de TVA" /></li>
+          <Line label="TVA" value={editeur.tva} />
         </ul>
         <p>Directeur de la publication : {editeur.nom}.</p>
 
