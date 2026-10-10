@@ -31,6 +31,7 @@ test("server-renders the Lysere commercial homepage", async () => {
   assert.doesNotMatch(html, /bonjour@votredomaine\.fr/);
   assert.match(html, /href="mailto:contact@lysere\.fr"/);
   assert.doesNotMatch(html, /rdv\.lysere\.fr/);
+  assert.match(html, /href="\/mentions-legales"/);
   assert.match(html, /Me contacter par e-mail/);
   assert.doesNotMatch(html, /LÀ OÙ LE TRAVAIL RALENTIT|PAR OÙ COMMENCER|UN PROCESSUS EN TÊTE|Commencez par le travail/);
   assert.doesNotMatch(html, /codex-preview|SkeletonPreview|react-loading-skeleton/i);

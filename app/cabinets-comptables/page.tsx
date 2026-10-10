@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { CaseNarrative } from "../components/CaseNarrative";
 import { InboxWidget } from "../components/InboxWidget";
 import { NumberedList, SectionIntro } from "../components/Sections";
 import { Showcase } from "../components/Showcase";
@@ -31,15 +30,6 @@ const automations = [
   { name: "Documents", title: "Moins de ressaisie, moins d’oublis.", copy: "Les informations utiles sont extraites des documents reçus et rangées au bon endroit dans vos outils." },
 ];
 
-const demoSteps = [
-  { label: "Réception", title: "Un client envoie ses relevés", copy: "Un e-mail arrive avec trois pièces jointes et un message rédigé librement : « Voici mes relevés, il me semble qu’il manque celui de février. »" },
-  { label: "Lecture", title: "Le message est compris", copy: "Le système identifie le client, le dossier concerné et la nature des documents envoyés." },
-  { label: "Dossier", title: "Les pièces sont rangées", copy: "Les relevés sont classés dans le bon dossier, au bon nom, sans qu’un collaborateur ait à les déplacer." },
-  { label: "Contrôle", title: "Il manque une pièce", copy: "En comparant avec ce qui est attendu, le système constate que le relevé de février est toujours absent." },
-  { label: "Relance", title: "Un message est préparé", copy: "Une relance polie et précise est rédigée pour le client, avec la pièce exacte à fournir." },
-  { label: "Validation", title: "Le collaborateur valide en un clic", copy: "Rien ne part sans votre accord. Le collaborateur relit, ajuste si besoin, puis envoie." },
-];
-
 const method = [
   ["Un premier échange", "Vous m’expliquez comment le cabinet fonctionne aujourd’hui et ce qui fait perdre du temps à vos équipes."],
   ["Un seul processus pour commencer", "On choisit une tâche précise, assez petite pour être mise en place rapidement et mesurée sans risque."],
@@ -57,7 +47,7 @@ export default function CabinetsComptables() {
       </header>
 
       <section className="hero hero--long" aria-labelledby="hero-title">
-        <div className="hero-copy"><p className="hero-kicker">Pour les cabinets d’expertise comptable</p><h1 id="hero-title">Moins d’e-mails à trier.<br /><em>Plus de temps pour vos dossiers.</em></h1><div className="hero-aside"><p>J’automatise les tâches répétitives de votre cabinet : relances de pièces manquantes, tri des e-mails clients, réponses aux questions courantes. Sur mesure, autour des outils que vous utilisez déjà.</p><div className="hero-actions"><a className="button button-primary" href={contactUrl}>Me contacter par e-mail</a><a className="button button-secondary" href="#demonstration">Voir un exemple concret</a></div></div></div>
+        <div className="hero-copy"><p className="hero-kicker">Pour les cabinets d’expertise comptable</p><h1 id="hero-title">Moins d’e-mails à trier.<br /><em>Plus de temps pour vos dossiers.</em></h1><div className="hero-aside"><p>J’automatise les tâches répétitives de votre cabinet : relances de pièces manquantes, tri des e-mails clients, réponses aux questions courantes. Sur mesure, autour des outils que vous utilisez déjà.</p><div className="hero-actions"><a className="button button-primary" href={contactUrl}>Me contacter par e-mail</a><a className="button button-secondary" href="#realisations">Voir des exemples concrets</a></div></div></div>
         <InboxWidget />
       </section>
 
@@ -74,11 +64,6 @@ export default function CabinetsComptables() {
       <section className="section realisations" id="realisations" aria-labelledby="realisations-title">
         <SectionIntro eyebrow="Réalisations" id="realisations-title" title={<>Deux outils déjà construits,<br />à quoi ils ressemblent.</>}><p>Voici deux systèmes que j’ai développés pour le quotidien d’un cabinet comptable. Ce sont de vrais outils qui tournent, pas des maquettes : chacun peut être adapté à vos règles et branché sur vos logiciels.</p></SectionIntro>
         <Showcase />
-      </section>
-
-      <section className="section workflow" id="demonstration" aria-labelledby="workflow-title">
-        <SectionIntro eyebrow="Démonstration · Exemple fictif" id="workflow-title" title={<>Un client envoie ses relevés.<br />Il en manque un.</>}><p>Voici ce qui se passe quand ce genre d’e-mail arrive dans un cabinet équipé. Ce n’est pas un cas client, mais exactement le type de système que je construis.</p></SectionIntro>
-        <CaseNarrative steps={demoSteps} />
       </section>
 
       <section className="section integration trust" aria-labelledby="trust-title">
@@ -104,7 +89,7 @@ export default function CabinetsComptables() {
       </section>
 
       <section className="contact" id="contact" aria-labelledby="contact-title"><h2 id="contact-title">Quelle tâche revient trop souvent<br />dans votre cabinet ?</h2><p>Pas besoin d’avoir imaginé la solution. Racontez-moi simplement ce qui fait perdre du temps à vos équipes, je vous dirai franchement ce qui peut être automatisé.</p><div className="contact-actions"><a className="button contact-booking" href={contactUrl}>Me contacter par e-mail</a><a className="contact-email" href="mailto:contact@lysere.fr">Écrire à contact@lysere.fr</a></div><p className="contact-note">Je vous réponds personnellement, sans engagement.</p></section>
-      <footer><a className="brand-lockup brand-lockup--footer" href="/" aria-label="Lysere — Accueil"><Image src="/lysere-logo-horizontal.svg" alt="" width={1414} height={630} /></a><p>Automatisations sur mesure pour cabinets comptables.</p></footer>
+      <footer><a className="brand-lockup brand-lockup--footer" href="/" aria-label="Lysere — Accueil"><Image src="/lysere-logo-horizontal.svg" alt="" width={1414} height={630} /></a><p>Automatisations sur mesure pour cabinets comptables.</p><p className="footer-legal"><a href="/mentions-legales">Mentions légales</a></p></footer>
     </main>
   );
 }

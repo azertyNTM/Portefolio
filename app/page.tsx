@@ -90,7 +90,7 @@ export default function Home() {
       </section>
 
       <section className="contact" id="contact" aria-labelledby="contact-title"><h2 id="contact-title">Parlons du travail<br />qui revient trop souvent.</h2><p>Pas besoin d’avoir déjà imaginé la solution. Expliquez-moi simplement comment le processus fonctionne aujourd’hui et ce qui vous fait perdre du temps.</p><div className="contact-actions"><a className="button contact-booking" href={contactUrl}>Me contacter par e-mail</a><a className="contact-email" href="mailto:contact@lysere.fr">Écrire à contact@lysere.fr</a></div><p className="contact-note">Je vous réponds personnellement.</p></section>
-      <footer><a className="brand-lockup brand-lockup--footer" href="#top" aria-label="Lysere — Retour en haut"><Image src="/lysere-logo-horizontal.svg" alt="" width={1414} height={630} /></a><p>Automatisations et systèmes sur mesure.</p></footer>
+      <footer><a className="brand-lockup brand-lockup--footer" href="#top" aria-label="Lysere — Retour en haut"><Image src="/lysere-logo-horizontal.svg" alt="" width={1414} height={630} /></a><p>Automatisations et systèmes sur mesure.</p><p className="footer-legal"><a href="/mentions-legales">Mentions légales</a></p></footer>
     </main>
   );
 }
