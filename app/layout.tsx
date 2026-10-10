@@ -17,17 +17,17 @@ export const metadata: Metadata = {
     description: "Des systèmes sur mesure pour réduire les tâches manuelles, connecter les outils et accélérer les processus des entreprises.",
     type: "website",
     locale: "fr_FR",
-    images: [{ url: "/og-editorial.png", width: 1731, height: 909, alt: "Lysere — Automatisation de processus sur mesure" }],
+    images: [{ url: "/og-lysere.png", width: 1200, height: 630, alt: "Lysere — Automatisation de processus sur mesure" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Lysere — Automatisation de processus sur mesure",
     description: "Des systèmes sur mesure pour réduire les tâches manuelles, connecter les outils et accélérer les processus des entreprises.",
-    images: ["/og-editorial.png"],
+    images: ["/og-lysere.png"],
   },
   icons: {
-    icon: "/lysere-favicon.svg",
-    shortcut: "/lysere-favicon.svg",
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }, { url: "/favicon.ico", sizes: "any" }],
+    apple: "/favicon-180.png",
   },
 };
 

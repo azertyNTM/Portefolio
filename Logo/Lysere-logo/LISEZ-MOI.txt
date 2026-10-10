@@ -1,0 +1,28 @@
+LYSERE — KIT LOGO « L'AIGUILLAGE »
+
+Couleurs
+  Bleu nuit (encre) : #0B1B33
+  Bleu vif (accent) : #2E5BFF
+  Accent sur fond foncé : #7B9BFF
+  Aucun dégradé, nulle part.
+
+Typographie : Manrope Bold (le « y » est dessiné sur mesure, ne pas le retaper au clavier).
+
+1-logo-svg   Logo vectoriel : couleur (fond clair), blanc (fond foncé), noir (une couleur), sombre (avec fond bleu nuit).
+2-logo-png   Les mêmes en PNG transparent, 800 px et 2400 px de large.
+3-icone      Le « y » seul (icone) et la tuile bleu nuit (icone-app) pour avatars LinkedIn, Gmail, réseaux.
+4-animation  Animation (~2 s, se joue une fois puis reste figée) :
+             .svg  pour le site web (se désactive si le visiteur a coupé les animations)
+             .webm pour le web / vidéos, fond transparent
+             .mov  ProRes 4444 avec transparence, pour le montage vidéo
+             « blanc » = version pour fonds foncés.
+5-favicon    favicon.ico, favicon.svg et PNG (180 = Apple, 192/512 = Android).
+             Dans le <head> du site :
+             <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+             <link rel="icon" href="/favicon.ico" sizes="any">
+             <link rel="apple-touch-icon" href="/favicon-180.png">
+
+Règles
+  - Laisser autour du logo un espace au moins égal à la hauteur du « s ».
+  - Ne pas déformer, ne pas ajouter d'ombre, de contour ou de dégradé.
+  - Largeur minimale du logo complet : 80 px. En dessous, utiliser l'icône seule.

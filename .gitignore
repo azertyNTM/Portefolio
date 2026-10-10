@@ -43,3 +43,7 @@ token.json
 /.wrangler/
 /outputs/
 /work/
+
+# hors site
+/codex-agents-review/
+/infra/

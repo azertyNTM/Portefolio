@@ -1,6 +1,9 @@
 import Image from "next/image";
 import { CaseNarrative } from "./components/CaseNarrative";
+import { IntegrationMap } from "./components/IntegrationMap";
 import { LeadWorkflowWidget } from "./components/LeadWorkflowWidget";
+import { NumberedList, SectionIntro } from "./components/Sections";
+import { TimeCounter } from "./components/TimeCounter";
 
 const problems = [
   ["Les mêmes informations sont ressaisies.", "Vos logiciels possèdent déjà une partie des données nécessaires, mais quelqu’un doit encore les déplacer ou les reformater."],
@@ -28,23 +31,27 @@ const methodSteps = [
 const measures = ["Temps de traitement", "Étapes manuelles", "Délais de réponse", "Erreurs ou oublis", "Volume traité", "Temps humain mobilisé"];
 
 const connectedTools = ["CRM", "E-mail", "Formulaire", "Documents", "API", "Logiciel métier"];
+const contactUrl = "mailto:contact@lysere.fr";
 
 export default function Home() {
   return (
     <main id="top">
       <header className="site-header">
-        <a className="brand-lockup" href="#top" aria-label="Lysere — Retour à l’accueil"><Image src="/lysere-logo-horizontal.svg" alt="" width={560} height={220} priority /></a>
-        <nav aria-label="Navigation principale"><a href="#automatisation">Automatisation</a><a href="#methode">Méthode</a><a href="#contact">Contact</a></nav>
-        <a className="header-cta" href="#contact">Parler de votre processus</a>
+        <a className="brand-lockup" href="#top" aria-label="Lysere — Retour à l’accueil"><Image src="/lysere-logo-horizontal.svg" alt="" width={1414} height={630} priority /></a>
+        <nav aria-label="Navigation principale"><a href="#automatisation">Automatisation</a><a href="#methode">Méthode</a><a href="/cabinets-comptables">Cabinets comptables</a><a href="#contact">Contact</a></nav>
+        <a className="header-cta" href={contactUrl}>Me contacter</a>
       </header>
 
       <section className="hero" aria-labelledby="hero-title">
-        <div className="hero-copy"><h1 id="hero-title">J’automatise vos<br /><em>processus.</em></h1><div className="hero-aside"><p>Je conçois des systèmes sur mesure pour réduire les tâches manuelles, connecter vos outils et accélérer le travail de vos équipes.</p><div className="hero-actions"><a className="button button-primary" href="#contact">Parler de votre processus</a><a className="button button-secondary" href="#demonstration">Voir un exemple concret</a></div></div></div>
+        <div className="hero-copy"><h1 id="hero-title">J’automatise vos<br /><em>processus.</em></h1><div className="hero-aside"><p>Je conçois des systèmes sur mesure pour réduire les tâches manuelles, connecter vos outils et accélérer le travail de vos équipes.</p><div className="hero-actions"><a className="button button-primary" href={contactUrl}>Me contacter par e-mail</a><a className="button button-secondary" href="#demonstration">Voir un exemple concret</a></div></div></div>
         <LeadWorkflowWidget />
       </section>
 
+      <a className="niche-band" href="/cabinets-comptables"><span>Vous dirigez un cabinet d’expertise comptable ?</span><strong>Voir ce que j’automatise pour les cabinets <span aria-hidden="true">→</span></strong></a>
+
       <section className="section problems" aria-labelledby="problems-title">
         <SectionIntro id="problems-title" title={<>Beaucoup de travail ne devrait<br />plus être manuel.</>}><p>Une information copiée d’un outil à l’autre. Un document qu’il faut encore ouvrir, lire puis ressaisir. Un prospect qu’il faut rechercher avant de pouvoir lui répondre. Une relance qui dépend de quelqu’un qui doit penser à la faire. Une demande qui attend parce que l’information nécessaire se trouve ailleurs.</p><p>Pris séparément, ce sont quelques minutes.<br />Répétés chaque jour, ce sont des heures.</p></SectionIntro>
+        <TimeCounter />
         <NumberedList items={problems} />
       </section>
 
@@ -65,12 +72,12 @@ export default function Home() {
 
       <section className="section integration" aria-labelledby="integration-title">
         <div className="integration-copy"><SectionIntro id="integration-title" title={<>Vos outils restent<br />vos outils.</>}><p>Pas besoin de reconstruire votre entreprise autour d’un nouvel outil.</p><p>Une bonne automatisation doit s’adapter à votre façon de travailler. Pas l’inverse.</p><p>L’objectif n’est pas d’ajouter une plateforme de plus. C’est de faire travailler ensemble celles que vous avez déjà.</p></SectionIntro></div>
-        <div className="integration-map" aria-label="Le processus relie les outils existants"><div className="map-center">Votre<br />processus</div>{connectedTools.map((tool, index) => <div className={`map-node map-node-${index + 1}`} key={tool}><span>{tool}</span></div>)}</div>
+        <IntegrationMap tools={connectedTools} />
       </section>
 
       <section className="section method" id="methode" aria-labelledby="method-title">
         <SectionIntro eyebrow="Une première amélioration, pas un grand chantier" id="method-title" title={<>Commencer petit.<br />Vérifier dans le réel.</>}><p>Pas besoin d’automatiser toute votre entreprise. On part d’un processus précis, on vérifie ce que le système change, puis on l’étend uniquement si cela se justifie.</p></SectionIntro>
-        <NumberedList items={methodSteps} />
+        <NumberedList items={methodSteps} progress />
       </section>
 
       <section className="section value" aria-labelledby="value-title">
@@ -82,16 +89,8 @@ export default function Home() {
         <div className="measure-panel"><div><span className="item-number">Ce que l’on mesure</span><h3>On regarde ce qui a réellement changé.</h3><p>Les indicateurs dépendent du processus. Ils sont choisis avant d’étendre le système, sans promesse chiffrée inventée.</p></div><ul>{measures.map((measure) => <li key={measure}>{measure}</li>)}</ul></div>
       </section>
 
-      <section className="contact" id="contact" aria-labelledby="contact-title"><h2 id="contact-title">Parlons du travail<br />qui revient trop souvent.</h2><p>Pas besoin d’avoir déjà imaginé la solution. Expliquez-moi simplement comment le processus fonctionne aujourd’hui et ce qui vous fait perdre du temps.</p><p className="contact-note">Une situation réelle suffit pour commencer.</p></section>
-      <footer><a className="brand-lockup brand-lockup--footer" href="#top" aria-label="Lysere — Retour en haut"><Image src="/lysere-logo-horizontal.svg" alt="" width={560} height={220} /></a><p>Automatisations et systèmes sur mesure.</p></footer>
+      <section className="contact" id="contact" aria-labelledby="contact-title"><h2 id="contact-title">Parlons du travail<br />qui revient trop souvent.</h2><p>Pas besoin d’avoir déjà imaginé la solution. Expliquez-moi simplement comment le processus fonctionne aujourd’hui et ce qui vous fait perdre du temps.</p><div className="contact-actions"><a className="button contact-booking" href={contactUrl}>Me contacter par e-mail</a><a className="contact-email" href="mailto:contact@lysere.fr">Écrire à contact@lysere.fr</a></div><p className="contact-note">Je vous réponds personnellement.</p></section>
+      <footer><a className="brand-lockup brand-lockup--footer" href="#top" aria-label="Lysere — Retour en haut"><Image src="/lysere-logo-horizontal.svg" alt="" width={1414} height={630} /></a><p>Automatisations et systèmes sur mesure.</p></footer>
     </main>
   );
-}
-
-function SectionIntro({ id, title, eyebrow, children }: { id: string; title: React.ReactNode; eyebrow?: string; children?: React.ReactNode }) {
-  return <div className="section-intro">{eyebrow && <p className="section-kicker">{eyebrow}</p>}<h2 id={id}>{title}</h2>{children && <div className="section-copy">{children}</div>}</div>;
-}
-
-function NumberedList({ items }: { items: string[][] }) {
-  return <div className="numbered-list">{items.map(([title, copy], index) => <article key={title}><span className="item-number">{index + 1}</span><h3>{title}</h3><p>{copy}</p></article>)}</div>;
 }

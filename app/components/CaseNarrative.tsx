@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const steps = [
+const defaultSteps = [
   { title: "La demande arrive", copy: "Un formulaire est envoyé ou un e-mail arrive avec une demande formulée librement.", label: "Réception" },
   { title: "Les informations sont comprises", copy: "Le système repère l’objet de la demande et extrait les éléments nécessaires au traitement.", label: "Compréhension" },
   { title: "Le contexte est retrouvé", copy: "Il récupère uniquement les informations utiles dans le CRM, les documents ou les outils concernés.", label: "Contexte" },
@@ -11,7 +11,9 @@ const steps = [
   { title: "Une personne valide si nécessaire", copy: "Si le cas est sensible ou ambigu, le système s’arrête au bon endroit et transmet le dossier à une personne.", label: "Validation" },
 ];
 
-export function CaseNarrative() {
+export type NarrativeStep = { title: string; copy: string; label: string };
+
+export function CaseNarrative({ steps = defaultSteps }: { steps?: NarrativeStep[] }) {
   const [active, setActive] = useState(0);
   const artRef = useRef<HTMLDivElement | null>(null);
   const refs = useRef<(HTMLElement | null)[]>([]);
