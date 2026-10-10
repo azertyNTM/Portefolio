@@ -10,11 +10,11 @@ export const metadata: Metadata = {
 // Informations à compléter par Alexis (null = pas encore fourni, affiché en surligné).
 const editeur = {
   nom: "Alexis Eydoux",
-  statut: null as string | null, // ex. « Entrepreneur individuel (micro-entreprise) »
-  siret: null as string | null,
+  statut: "Entrepreneur individuel (EI), micro-entreprise" as string | null,
+  siret: "980 408 058 00017" as string | null,
   adresse: null as string | null, // domicile ou adresse de domiciliation
   telephone: null as string | null,
-  tva: null as string | null, // ex. « TVA non applicable, article 293 B du Code général des impôts »
+  tva: "TVA non applicable, article 293 B du Code général des impôts" as string | null,
 };
 
 function Field({ value, hint }: { value: string | null; hint: string }) {
@@ -36,7 +36,7 @@ export default function MentionsLegales() {
         <h2>Éditeur du site</h2>
         <p>Le site lysere.fr est édité par :</p>
         <ul>
-          <li><strong>{editeur.nom}</strong>, sous le nom commercial Lysere</li>
+          <li><strong>{editeur.nom} EI</strong>, sous le nom commercial Lysere</li>
           <li>Statut : <Field value={editeur.statut} hint="statut de l’entreprise" /></li>
           <li>SIRET : <Field value={editeur.siret} hint="numéro SIRET" /></li>
           <li>Adresse : <Field value={editeur.adresse} hint="adresse de l’entreprise" /></li>
